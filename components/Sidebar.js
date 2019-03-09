@@ -23,10 +23,13 @@ export default class SideBar extends React.Component {
               <Text>Chat</Text>
             </ListItem>
             <ListItem button onPress={() => Actions.Profile()}>
-              <Text>Profile</Text>
+              <Text>My Profile</Text>
             </ListItem>
-            <ListItem button onPress={() => Actions.NGOProfile()}>
-              <Text>NGO Profile</Text>
+            <ListItem button onPress={() => Actions.NGOPages()}>
+              <Text>NGOs Involved</Text>
+            </ListItem>
+            <ListItem button onPress={() => Actions.CompanyPages()}>
+              <Text>Companies Involved</Text>
             </ListItem>
             <ListItem button onPress={() => Actions.Login()}>
               <Text>Log Out</Text>

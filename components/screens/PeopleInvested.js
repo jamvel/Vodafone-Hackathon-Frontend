@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar';
 import Card from '../Card';
 import { Actions } from 'react-native-router-flux';
 
-export default class HomeScreen extends React.Component {
+export default class PeopleInvested extends React.Component {
   constructor(props){
     super(props);
     this.state = {}
@@ -27,7 +27,7 @@ export default class HomeScreen extends React.Component {
 
   render() {
     const Cards = [];
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 2; i++){
       Cards.push(
         <Card
           key={i}

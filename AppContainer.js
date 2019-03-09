@@ -9,7 +9,12 @@ import { Router, Scene } from 'react-native-router-flux';
 import HomeScreen from "./components/screens/Homescreen.js";
 import Login from "./components/screens/Login/Login.js";
 import NGOProfile from "./components/screens/Profile/NGOProfile.js";
+import NGOPages from "./components/screens/NGOPages.js";
+import CompanyPages from "./components/screens/CompanyPages.js";
+import CompanyProfile from "./components/screens/Profile/CompanyProfile.js";
 import Profile from "./components/screens/Profile/Profile.js";
+import PeopleInvested from "./components/screens/PeopleInvested.js";
+import Error from "./components/screens/Error.js";
 
 export default class AppContainer extends Component {
   constructor() {
@@ -51,7 +56,12 @@ export default class AppContainer extends Component {
           <Scene key="Login" component={Login} initial={true} />
           <Scene key="HomeScreen" component={HomeScreen} initial={false} type="reset"/>
           <Scene key="NGOProfile" component={NGOProfile} />
+          <Scene key="NGOPages" component={NGOPages} />
           <Scene key="Profile" component={Profile} />
+          <Scene key="PeopleInvested" component={PeopleInvested} />
+          <Scene key="Error" component={Error} />
+          <Scene key="CompanyPages" component={CompanyPages} />
+          <Scene key="CompanyProfile" component={CompanyProfile} />
         </Scene>
       </Router>
     );
