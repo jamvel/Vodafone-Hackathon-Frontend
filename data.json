@@ -1,44 +1,51 @@
 {
   "NGOs":[
-    {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"boy1.png"},
-    {"id":2, "name":"NGO2", "address":"2 NGO Address", "tel":21249202, "mob":99887767, "email":"NGO.email2@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"girl1.png"},
-    {"id":4, "name":"NGO4", "address":"4 NGO Address", "tel":21249204, "mob":99887769, "email":"NGO.email4@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"male1.png"},
-		{"id":3, "name":"NGO3", "address":"3 NGO Address", "tel":21249203, "mob":99887768, "email":"NGO.email3@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"female1.png"},
-    {"id":5, "name":"NGO5", "address":"5 NGO Address", "tel":21249205, "mob":99887760, "email":"NGO.email5@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"boy1.png"}
+    {"id":1, "name":"Caritas", "website":"https://www.caritasmalta.org/" ,"address":"Caritas Malta, 5, Lion Street, Floriana, FRN1514", "contact":25906600, "email":"info@caritasmalta.org","category":["Reformation", "Drug Addiction"], "img":"CARITAS.png"},
+    {"id":2, "name":"Make a Wish Foundation", "website":"https://www.worldwish.org/en" , "address":"Make-A-Wish International 1702 E Highland Ave, Suite 305 Phoenix, Arizona 85016 USA", "contact":"1 602.230.9900", "email":"international@worldwish.org","category":["Children", "Illness"], "img":"MAW.png"},
+    {"id":3, "name":"Richmond Foundation", "website":"https://www.caritasmalta.org/" , "address":"424, St. Joseph High Road, St. Venera, SVR 1013", "contact":21224580, "email":"info@richmond.org.mt","category":["Mental Health"], "img":"Richmond.png"},
+		{"id":4, "name":"St. Jeanne Antide Foundation", "website":"https://www.antidemalta.org/" , "address":"51, Tarxien Road, Tarxien TXN 1090", "contact":21809011, "email":"macen.sjaf@gmail.com","category":["Domestic Violence", "Social Work", "Mental Health"], "img":"SJA.png"},
+    {"id":5, "name":"SOS Malta", "website":"http://www.sosmalta.org/" , "address":"10, Triq il-Ward, Santa Venera, SVR 1640", "contact":21244123, "email":"info@sosmalta.org ","category":["Solidarity"], "img":"SOS.png"}
   ],
   "Companies":[
-    {"id":2, "name":"Company2", "address":"2 Company Address", "tel":21249202, "mob":99887767, "email":"company.email2@gmail.com", "img":"girl1.png"},
-		{"id":1, "name":"Company1", "address":"1 Company Address", "tel":21249201, "mob":99887766, "email":"company.email1@gmail.com", "img":"male1.png"},
-    {"id":3, "name":"Company3", "address":"3 Company Address", "tel":21249203, "mob":99887768, "email":"company.email3@gmail.com", "img":"female1.png"},
-    {"id":4, "name":"Company4", "address":"4 Company Address", "tel":21249204, "mob":99887769, "email":"company.email4@gmail.com", "img":"boy1.png"},
-    {"id":5, "name":"Company5", "address":"5 Company Address", "tel":21249205, "mob":99887760, "email":"company.email5@gmail.com", "img":"girl1.png"}
+    {"id":1, "name":"Vodafone", "address":"Malta International Airport (Arrivals), Ħal Luqa LQA 4000", "contact":99999247, "email":"info@vodafone.com", "employeeHours":200, "startDate":"2018-04-25T18:25:43.511Z", "img":"Vodafone.png"},
+		{"id":2, "name":"Office of the Prime Minister", "address":"Auberge de Castille", "contact":99999247, "email":"info@opm.com", "employeeHours":50, "startDate":"2018-06-24T18:15:43.511Z", "img":"OPM.png"},
+    {"id":3, "name":"The Malta Police Force", "address":"The Malta Police Force, Police General Headquarters, Pjazza San Kalcidonju, Floriana FRN 1530", "contact":21224001, "email":"pulizija@gov.mt", "employeeHours":37, "startDate":"2018-02-24T18:25:43.511Z", "img":"Police.png"},
+    {"id":4, "name":"Civil Protection Department Malta", "address":"Ministry for Home Affairs and National Security, 201, Strait Street, Valletta VLT 1433", "contact":25689000, "email":"homeaffairs@gov.mt", "employeeHours":157, "startDate":"2018-01-10T20:20:40.511Z", "img":"CPD.png"},
+    {"id":5, "name":"University Of Malta", "address":"University of Malta, Msida MSD 2080, Malta", "contact":23402340, "email":"info@um.edu.mt", "employeeHours":30, "startDate":"2018-03-12T08:25:53.511Z", "img":"UOM.png"}
   ],
   "Receiver":[
-    {"id":1, "ngo": 4, "name":"Name1", "surname":"surname1", "description":"1 Description", "idNum":"15396M", "mob":99887766, "img":"male1.png"},
-    {"id":2, "ngo": 3, "name":"Name2", "surname":"surname2", "description":"2 Description", "idNum":"963213M", "mob":99887767, "img":"female1.png"},
-    {"id":3, "ngo": 2, "name":"Name3", "surname":"surname3", "description":"3 Description", "idNum":"895636M", "mob":99887768, "img":"boy1.png"},
-    {"id":4, "ngo": 5, "name":"Name4", "surname":"surname4", "description":"4 Description", "idNum":"1235G", "mob":99887769, "img":"girl1.png"},
-    {"id":5, "ngo": 1, "name":"Name5", "surname":"surname5", "description":"5 Description", "idNum":"963452M", "mob":99887760, "img":"male1.png"}
+    {"id":1, "ngo": 4, "ngoName":"St. Jeanne Antide Foundation", "name":"John", "surname":"Borg", "description":"During my teenage years my mum abandoned me and my siblings. I had to take care of my family instead of going to school.", "idNum":"15396M", "mob":99887766, "img":"male1.png"},
+    {"id":2, "ngo": 3, "ngoName":"Richmond Foundation", "name":"Simone", "surname":"Muscat", "description":"I was abused by my husband and still experience trauma", "idNum":"963213M", "mob":99887767, "img":"female1.png"},
+    {"id":3, "ngo": 2, "ngoName":"Make a Wish Foundation", "name":"Joseph", "surname":"Delia", "description":"I had a serious illness which caused me to lose my eye sight and consequently my job", "idNum":"895636M", "mob":99887768, "img":"boy1.png"},
+    {"id":4, "ngo": 5, "ngoName":"SOS Malta", "name":"Adrian", "surname":"Vella", "description":"My husband fell ill and I cant maintain the two of us", "idNum":"1235G", "mob":99887769, "img":"girl1.png"},
+    {"id":5, "ngo": 1, "ngoName":"Caritas", "name":"Henry", "surname":"Spiteri", "description":"I am a 75 year old who has no one in life and a lot of medical issues which I can't pay for", "idNum":"963452M", "mob":99887760, "img":"male1.png"}
   ],
   "Provider":[
-    {"id":1, "company": 4, "name":"Name1", "surname":"surname1", "idNum":"121396M", "fund":3.65, "img":"female1.png"},
-    {"id":2, "company": 3, "name":"Name2", "surname":"surname2", "idNum":"9613213M", "fund":5.69, "img":"boy1.png"},
-    {"id":3, "company": 2, "name":"Name3", "surname":"surname3", "idNum":"89241336M", "fund":500, "img":"girl1.png"},
-    {"id":4, "company": 5, "name":"Name4", "surname":"surname4", "idNum":"123455G", "fund":30, "img":"male1.png"},
-    {"id":5, "company": 1, "name":"Name5", "surname":"surname5", "idNum":"9631232M", "fund":58, "img":"female1.png"}
+    {"id":1, "company": 4, "companyName": "Civil Protection Department Malta", "name":"Paul", "surname":"Cassar", "idNum":"121396M", "fund":3.65, "hours":50, "img":"female1.png"},
+    {"id":2, "company": 3, "companyName": "The Malta Police Force", "name":"Michael", "surname":"Farrugia", "idNum":"613213M", "fund":5.69, "hours":36, "img":"boy1.png"},
+    {"id":3, "company": 2, "companyName": "Office of the Prime Minister", "name":"Anthony", "surname":"Zammit", "idNum":"89236M", "fund":500, "hours":0, "img":"girl1.png"},
+    {"id":4, "company": 5, "companyName": "University Of Malta", "name":"Samuel", "surname":"Green", "idNum":"12355G", "fund":30, "hours":20,  "img":"male1.png"},
+    {"id":5, "company": 1, "companyName": "Vodafone", "name":"Luke", "surname":"Abela", "idNum":"96232M", "fund":58,  "hours":15, "img":"female1.png"}
   ],
   "Needs":[
-    {"nId":1, "ngoId":4, "target":5, "current":2, "reason": "Reason 1","how":"How 1", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z"},
-    {"nId":2, "ngoId":3, "target":600, "current":200, "reason": "Reason 2","how":"How 2", "startDate":"2019-05-25T18:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z"},
-    {"nId":3, "ngoId":1, "target":0.5, "current":20, "reason": "Reason 3","how":"How 3", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z"},
-    {"nId":4, "ngoId":5, "target":30, "current":2, "reason": "Reason 4","how":"How 4", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z"},
-    {"nId":5, "ngoId":2, "target":70, "current":20, "reason": "Reason 5","how":"How 5", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z"}
+    {"nId":1, "ngoId":4, "target":5, "current":2, "reason": "Pay Workers","how":"How 1", "startDate":"2019-04-24T14:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z"},
+    {"nId":2, "ngoId":3, "target":600, "current":200, "reason": "Buy new van","how":"How 2", "startDate":"2019-05-25T16:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z"},
+    {"nId":3, "ngoId":1, "target":20, "current":20, "reason": "Feed residents","how":"How 3", "startDate":"2019-06-26T17:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z"},
+    {"nId":4, "ngoId":5, "target":30, "current":2, "reason": "Get more carers","how":"How 4", "startDate":"2019-07-27T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z"},
+    {"nId":5, "ngoId":2, "target":70, "current":20, "reason": "Fix structural damage to building","how":"How 5", "startDate":"2019-08-28T19:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z"}
   ],
   "Requests":[
-    {"nId":1, "reqId":4, "target":5, "current":2, "reason": "Reason 1","how":"How 1", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z", "hide":false},
-    {"nId":2, "reqId":3, "target":600, "current":200, "reason": "Reason 2","how":"How 2", "startDate":"2019-05-25T18:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z", "hide":false},
-    {"nId":3, "reqId":1, "target":0.5, "current":20, "reason": "Reason 3","how":"How 3", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z", "hide":true},
-    {"nId":4, "reqId":5, "target":30, "current":2, "reason": "Reason 4","how":"How 4", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z", "hide":false},
-    {"nId":5, "reqId":2, "target":70, "current":20, "reason": "Reason 5","how":"How 5", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z", "hide":true}
+    {"nId":1, "reqId":4, "target":5, "current":2, "reason": "New Wheelchair","how":"How 1", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z", "hide":false},
+    {"nId":2, "reqId":3, "target":600, "current":200, "reason": "Visit specialist in London","how":"How 2", "startDate":"2019-05-25T18:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z", "hide":false},
+    {"nId":3, "reqId":1, "target":20, "current":20, "reason": "Pay first 2 months rent","how":"How 3", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z", "hide":true},
+    {"nId":4, "reqId":5, "target":30, "current":2, "reason": "Pay for medicine","how":"How 4", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z", "hide":false},
+    {"nId":5, "reqId":2, "target":70, "current":20, "reason": "Pay outstanding debts","how":"How 5", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z", "hide":true}
+  ],
+  "data":[
+    {"title": "Event 1", "description": "Event 1 Description","extraInfo":"Additional Info"},
+    {"title": "Event 2", "description": "Event 2 Description","extraInfo":"Additional Info"},
+    {"title": "Event 3", "description": "Event 3 Description","extraInfo":"Additional Info"},
+    {"title": "Event 4", "description": "Event 4 Description","extraInfo":"Additional Info"},
+    {"title": "Event 5", "description": "Event 5 Description","extraInfo":"Additional Info"}
   ]
 }
