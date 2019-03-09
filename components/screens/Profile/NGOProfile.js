@@ -1,19 +1,8 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Content,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  List,
-  ListItem,
-  TextInput,
-  AppRegistry
-} from 'react-native';
+import {  Container, Content, StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, List, ListItem, TextInput, AppRegistry} from 'react-native';
+import DatePicker from 'react-native-datepicker'
 import { Actions } from 'react-native-router-flux';
+
 const data = [{"id":0, "name":"NGO0", "address":"0 NGO Address", "tel":21249200, "mob":99887765, "email":"NGO.email0@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"SJA.png"},
  {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"CARITAS.png"},
  {"id":2, "name":"NGO2", "address":"2 NGO Address", "tel":21249202, "mob":99887767, "email":"NGO.email2@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"MAW.png"},
@@ -26,7 +15,10 @@ var imgPath = '../../../assets/Ngos/MAW.png';
 export default class NGOProfile extends Component {
   constructor(props){
     super(props);
-    this.state = {}
+    const currentDate = new Date()
+    this.state = {
+      date:currentDate.getFullYear().toString()+"-"+currentDate.getMonth().toString()+"-"+currentDate.getDay().toString()
+    }
     switch (this.props.id) {
       case 0:
         imgPath = require('../../../assets/Ngos/SJA.png');
@@ -95,6 +87,31 @@ export default class NGOProfile extends Component {
 
                 style={styles.input}
                 />
+                <DatePicker
+                        style={{width: 200}}
+                        date={this.state.date}
+                        mode="date"
+                        placeholder="select date"
+                        format="YYYY-MM-DD"
+                        minDate={this.state.date}
+                        maxDate="2050-12-31"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        customStyles={{
+                          dateIcon: {
+                            position: 'absolute',
+                            left: 0,
+                            top: 4,
+                            marginLeft: 0
+                          },
+                          dateInput: {
+                            marginLeft: 36
+                          }
+                          // ... You can check the source to find the other keys.
+                        }}
+                        onDateChange={(date) => {this.setState({date: date})}}
+                      />
+
                 <TouchableOpacity style={styles.buttonContainer}>
                   <Text>Submit</Text>
                 </TouchableOpacity>

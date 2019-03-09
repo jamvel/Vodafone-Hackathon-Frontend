@@ -5,14 +5,15 @@ import { Actions } from 'react-native-router-flux';
 
 import PhotoGrid from '../../PhotoGrid.js';
 //const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"../../../assets/Profiles/boy1.png"};
-const data = {"id":1, "company": 4, "name":"John", "surname":"Doe", "idNum":"121396M", "fund":3.65, "time": 5, "img":"female1.png"};
+const data = {"id":1, "company": 4, "companyName":"Vodafone Malta", "name":"John", "surname":"Doe", "idNum":"121396M", "fund":3.65, "time": 5, "img":"female1.png"};
 
 export default class Profile extends Component {
   render() {
     const fullName = data.name + " " + data.surname;
     const funds = "Money Invested: #" + data.fund;
     const time = "Time Invested: " + data.time + " hours";
-    const companyName = "Vodafone Malta";
+    const companyName = data.companyName;
+    const companyID = data.company;
     return (
       <ScrollView>
       <View style={styles.container}>
@@ -23,7 +24,9 @@ export default class Profile extends Component {
               <Text style={styles.name}>{fullName}</Text>
               <Text style={styles.funds}>{funds}</Text>
               <Text style={styles.funds}>{time}</Text>
-              <Text style={styles.info}>{companyName}</Text>
+              <Text style={styles.info}
+                onPress={() => Actions.CompanyProfile({id:companyID})}>
+              {companyName}</Text>
               <View style = {styles.container}>
                 <PhotoGrid />
               </View>
