@@ -14,9 +14,20 @@ import {
   AppRegistry
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"boy1.png"};
 
 export default class NGOProfile extends Component {
+  componentDidMount(){
+    console.log(this.props.id);
+  }
+
   render() {
+    const category = "Children || Elderly || Companionship";
+    const address = "Address: " + data.address;
+    const tel = "Telephone: " + data.tel;
+    const mob = "Mobile: " + data.mob;
+    const email = "Email: " + data.email;
+
     return (
          <View>
             <ScrollView>
@@ -25,9 +36,12 @@ export default class NGOProfile extends Component {
                     <Image style={styles.avatar} source={require('../../../assets/Ngos/SJA.png')}/>
                     <View style={styles.body}>
                       <View style={styles.bodyContent}>
-                        <Text style={styles.name}>John Doe</Text>
-                        <Text style={styles.info}>UX Designer / Mobile developer</Text>
-                        <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
+                        <Text style={styles.name}>{data.name}</Text>
+                        <Text style={styles.info}>{category}</Text>
+                        <Text style={styles.description}>{address}</Text>
+                        <Text style={styles.description}>{tel}</Text>
+                        <Text style={styles.description}>{mob}</Text>
+                        <Text style={styles.description}>{email}</Text>
                       </View>
                   </View>
                 </View>
@@ -42,6 +56,7 @@ export default class NGOProfile extends Component {
                 placeholderTextColor="rgba(255,255,255,0.7)"
                 returnKeyType="next"
                 keyboardType="numeric"
+
                 style={styles.input}
                 />
                 <TouchableOpacity style={styles.buttonContainer}>
@@ -69,11 +84,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     marginTop:130
   },
-  name:{
-    fontSize:22,
-    color:"#FFFFFF",
-    fontWeight:'600',
-  },
   body:{
     marginTop:40,
   },
@@ -85,12 +95,14 @@ const styles = StyleSheet.create({
   name:{
     fontSize:28,
     color: "#696969",
-    fontWeight: "600"
+    fontWeight: "600",
+    textAlign: 'left'
   },
   info:{
     fontSize:16,
     color: "#00BFFF",
-    marginTop:10
+    marginTop:10,
+    textAlign: 'left'
   },
   description:{
     fontSize:16,
@@ -112,10 +124,8 @@ const styles = StyleSheet.create({
   title:{
     color: '#FFFFFF',
     marginTop: 10,
-    width: 160,
     textAlign: 'center',
     fontSize: 25,
-    fontWeight: '700',
-    opacity: 0.5
+    fontWeight: '700'
   }
 });

@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity
-} from 'react-native';
+import {  StyleSheet,  Text,  View,  Image,  TouchableOpacity} from 'react-native';
 
+import PhotoGrid from '../../PhotoGrid.js';
 //const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"../../../assets/Profiles/boy1.png"};
-const data = {"id":1, "company": 4, "name":"John", "surname":"Doe", "idNum":"121396M", "fund":3.65, "img":"female1.png"};
+const data = {"id":1, "company": 4, "name":"John", "surname":"Doe", "idNum":"121396M", "fund":3.65, "time": 5, "img":"female1.png"};
 
 export default class Profile extends Component {
   render() {
     const fullName = data.name + " " + data.surname;
-    const funds = "Funds Raised: #" + data.fund;
-    const companyName = "Vodafone Malta"
+    const funds = "Money Invested: #" + data.fund;
+    const time = "Time Invested: " + data.time + " hours";
+    const companyName = "Vodafone Malta";
     return (
       <View style={styles.container}>
           <View style={styles.header}></View>
@@ -23,8 +19,8 @@ export default class Profile extends Component {
             <View style={styles.bodyContent}>
               <Text style={styles.name}>{fullName}</Text>
               <Text style={styles.funds}>{funds}</Text>
+              <Text style={styles.funds}>{time}</Text>
               <Text style={styles.info}>{companyName}</Text>
-
 
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Option 1</Text>
@@ -32,6 +28,9 @@ export default class Profile extends Component {
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Option 2</Text>
               </TouchableOpacity>
+              <View style = {styles.container}>
+                <PhotoGrid />
+              </View>
             </View>
         </View>
       </View>
@@ -95,4 +94,8 @@ const styles = StyleSheet.create({
     borderRadius:30,
     backgroundColor: "#00BFFF",
   },
+  container:{
+    flex: 1,
+    backgroundColor: "#FFFFFF"
+  }
 });
