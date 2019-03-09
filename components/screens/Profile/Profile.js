@@ -7,19 +7,24 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"../../../assets/Profiles/boy1.png"};
+//const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"../../../assets/Profiles/boy1.png"};
+const data = {"id":1, "company": 4, "name":"John", "surname":"Doe", "idNum":"121396M", "fund":3.65, "img":"female1.png"};
 
 export default class Profile extends Component {
   render() {
+    const fullName = data.name + " " + data.surname;
+    const funds = "Funds Raised: #" + data.fund;
+    const companyName = "Vodafone Malta"
     return (
       <View style={styles.container}>
           <View style={styles.header}></View>
-          <Image style={styles.avatar} source={require("../../../assets/Profiles/boy1.png")}/>
+          <Image style={styles.avatar} source={require("../../../assets/Profiles/female1.png")}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}>John Doe</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
+              <Text style={styles.name}>{fullName}</Text>
+              <Text style={styles.funds}>{funds}</Text>
+              <Text style={styles.info}>{companyName}</Text>
+
 
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Option 1</Text>
@@ -50,9 +55,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     marginTop:130
   },
-  name:{
+  funds:{
     fontSize:22,
-    color:"#FFFFFF",
+    color:"#696968",
     fontWeight:'600',
   },
   body:{
