@@ -4,48 +4,48 @@ import { Actions } from 'react-native-router-flux';
 import PhotoGridCompany from '../../PhotoGridCompany.js';
 
 const data = [
-    {"id":1, "name":"Company1", "address":"1 Company Address", "tel":21249201, "mob":99887766, "email":"company.email1@gmail.com", "img":"male1.png", employeeHours:50},
-    {"id":2, "name":"Company2", "address":"2 Company Address", "tel":21249202, "mob":99887767, "email":"company.email2@gmail.com", "img":"girl1.png", employeeHours:50},
-    {"id":3, "name":"Company3", "address":"3 Company Address", "tel":21249203, "mob":99887768, "email":"company.email3@gmail.com", "img":"female1.png", employeeHours:50},
-    {"id":4, "name":"Company4", "address":"4 Company Address", "tel":21249204, "mob":99887769, "email":"company.email4@gmail.com", "img":"boy1.png", employeeHours:50},
-    {"id":5, "name":"Company5", "address":"5 Company Address", "tel":21249205, "mob":99887760, "email":"company.email5@gmail.com", "img":"girl1.png", employeeHours:50}
-  ];
+  {"id":1, "name":"Vodafone", "address":"Malta International Airport (Arrivals), Ħal Luqa LQA 4000", "contact":99999247, "email":"info@vodafone.com", "employeeHours":200, "startDate":"2018-04-25T18:25:43.511Z", "img":"Vodafone.png"},
+  {"id":2, "name":"Office of the Prime Minister", "address":"Auberge de Castille", "contact":99999247, "email":"info@opm.com", "employeeHours":50, "startDate":"2018-06-24T18:15:43.511Z", "img":"OPM.png"},
+  {"id":3, "name":"The Malta Police Force", "address":"The Malta Police Force, Police General Headquarters, Pjazza San Kalcidonju, Floriana FRN 1530", "contact":21224001, "email":"pulizija@gov.mt", "employeeHours":37, "startDate":"2018-02-24T18:25:43.511Z", "img":"Police.png"},
+  {"id":4, "name":"Civil Protection Department Malta", "address":"Ministry for Home Affairs and National Security, 201, Strait Street, Valletta VLT 1433", "contact":25689000, "email":"homeaffairs@gov.mt", "employeeHours":157, "startDate":"2018-01-10T20:20:40.511Z", "img":"CPD.png"},
+  {"id":5, "name":"University Of Malta", "address":"University of Malta, Msida MSD 2080, Malta", "contact":23402340, "email":"info@um.edu.mt", "employeeHours":30, "startDate":"2018-03-12T08:25:53.511Z", "img":"UOM.png"}
+];
 
 var errorFound = false;
-var imgPath = '../../../assets/Ngos/MAW.png';
+var imgPath = '../../../assets/Companies/Vodafone.png';
 
-export default class NGOProfile extends Component {
+export default class CompanyProfile extends Component {
   constructor(props){
     super(props);
     this.state = {}
     switch (this.props.id) {
       case 0:
-        imgPath = require('../../../assets/Ngos/SJA.png');
+        imgPath = require('../../../assets/Companies/Vodafone.png');
         break;
       case 1:
-        imgPath = require('../../../assets/Ngos/CARITAS.png');
+        imgPath = require('../../../assets/Companies/OPM.png');
         break;
       case 2:
-        imgPath = require('../../../assets/Ngos/MAW.png');
+        imgPath = require('../../../assets/Companies/Police.png');
         break;
       case 3:
-        imgPath = require('../../../assets/Ngos/Richmond.png');
+        imgPath = require('../../../assets/Companies/CPD.png');
         break;
       case 4:
-        imgPath = require('../../../assets/Ngos/SOS.png');
+        imgPath = require('../../../assets/Companies/UOM.png');
         break;
       default:
-        imgPath = require('../../../assets/Ngos/SJA.png');
+        imgPath = require('../../../assets/Companies/Vodafone.png');
     }
   }
 
 
   render() {
-    const category = "Total Employee Hours Accumulated: " + data[this.props.id].employeeHours;
+    const employeeHours = "Total Employee Hours Accumulated: " + data[this.props.id].employeeHours;
     const address = "Address: " + data[this.props.id].address;
-    const tel = "Telephone: " + data[this.props.id].tel;
-    const mob = "Mobile: " + data[this.props.id].mob;
+    const mob = "Mobile: " + data[this.props.id].contact;
     const email = "Email: " + data[this.props.id].email;
+    const startDate = "Start Date: " + data[this.props.id].startDate;
 
 
     errorFound = (this.props.id > data.length)? true: false;
@@ -61,11 +61,11 @@ export default class NGOProfile extends Component {
                     <View style={styles.body}>
                       <View style={styles.bodyContent}>
                         <Text style={styles.name}>{data[this.props.id].name}</Text>
-                        <Text style={styles.info}>{category}</Text>
+                        <Text style={styles.info}>{employeeHours}</Text>
                         <Text style={styles.description}>{address}</Text>
-                        <Text style={styles.description}>{tel}</Text>
                         <Text style={styles.description}>{mob}</Text>
                         <Text style={styles.description}>{email}</Text>
+                        <Text style={styles.description}>{startDate}</Text>
                       </View>
                   </View>
                 </View>

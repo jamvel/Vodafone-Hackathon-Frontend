@@ -3,12 +3,13 @@ import {  Container, Content, StyleSheet, Text, View, Image, TouchableOpacity, S
 import DatePicker from 'react-native-datepicker'
 import { Actions } from 'react-native-router-flux';
 
-const data = [{"id":0, "name":"NGO0", "address":"0 NGO Address", "tel":21249200, "mob":99887765, "email":"NGO.email0@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"SJA.png"},
- {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"CARITAS.png"},
- {"id":2, "name":"NGO2", "address":"2 NGO Address", "tel":21249202, "mob":99887767, "email":"NGO.email2@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"MAW.png"},
- {"id":4, "name":"NGO4", "address":"4 NGO Address", "tel":21249204, "mob":99887769, "email":"NGO.email4@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"Richmond.png"},
- {"id":3, "name":"NGO3", "address":"3 NGO Address", "tel":21249203, "mob":99887768, "email":"NGO.email3@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"SOS.png"},
- {"id":5, "name":"NGO5", "address":"5 NGO Address", "tel":21249205, "mob":99887760, "email":"NGO.email5@gmail.com","category":["Children", "Elderly", "Companionship"] ,"img":"SJA.png"}]
+
+const data = [{"id":1, "name":"Caritas", "website":"https://www.caritasmalta.org/" ,"address":"Caritas Malta, 5, Lion Street, Floriana, FRN1514", "contact":25906600, "email":"info@caritasmalta.org","category":["Reformation", "Drug Addiction"], "img":"CARITAS.png"},
+{"id":2, "name":"Make a Wish Foundation", "website":"https://www.worldwish.org/en" , "address":"Make-A-Wish International 1702 E Highland Ave, Suite 305 Phoenix, Arizona 85016 USA", "contact":"1 602.230.9900", "email":"international@worldwish.org","category":["Children", "Illness"], "img":"MAW.png"},
+{"id":3, "name":"Richmond Foundation", "website":"https://www.caritasmalta.org/" , "address":"424, St. Joseph High Road, St. Venera, SVR 1013", "contact":21224580, "email":"info@richmond.org.mt","category":["Mental Health"], "img":"Richmond.png"},
+{"id":4, "name":"St. Jeanne Antide Foundation", "website":"https://www.antidemalta.org/" , "address":"51, Tarxien Road, Tarxien TXN 1090", "contact":21809011, "email":"macen.sjaf@gmail.com","category":["Domestic Violence", "Social Work", "Mental Health"], "img":"SJA.png"},
+{"id":5, "name":"SOS Malta", "website":"http://www.sosmalta.org/" , "address":"10, Triq il-Ward, Santa Venera, SVR 1640", "contact":21244123, "email":"info@sosmalta.org ","category":["Solidarity"], "img":"SOS.png"}];
+
 var errorFound = false;
 var imgPath = '../../../assets/Ngos/MAW.png';
 
@@ -21,16 +22,16 @@ export default class NGOProfile extends Component {
     }
     switch (this.props.id) {
       case 0:
-        imgPath = require('../../../assets/Ngos/SJA.png');
-        break;
-      case 1:
         imgPath = require('../../../assets/Ngos/CARITAS.png');
         break;
-      case 2:
+      case 1:
         imgPath = require('../../../assets/Ngos/MAW.png');
         break;
-      case 3:
+      case 2:
         imgPath = require('../../../assets/Ngos/Richmond.png');
+        break;
+      case 3:
+        imgPath = require('../../../assets/Ngos/SJA.png');
         break;
       case 4:
         imgPath = require('../../../assets/Ngos/SOS.png');
@@ -43,12 +44,9 @@ export default class NGOProfile extends Component {
 
   render() {
     var category = "";
-    //data[this.props.id].category.forEach((cat)=>{ category = category + " || " + cat});
-    console.log(data[this.props.id].category);
     data[this.props.id].category.forEach(function(cat){(category == "")? category = cat : category = category + " || " + cat;});
     const address = "Address: " + data[this.props.id].address;
-    const tel = "Telephone: " + data[this.props.id].tel;
-    const mob = "Mobile: " + data[this.props.id].mob;
+    const contact = "Mobile: " + data[this.props.id].contact;
     const email = "Email: " + data[this.props.id].email;
 
 
@@ -67,8 +65,7 @@ export default class NGOProfile extends Component {
                         <Text style={styles.name}>{data[this.props.id].name}</Text>
                         <Text style={styles.info}>{category}</Text>
                         <Text style={styles.description}>{address}</Text>
-                        <Text style={styles.description}>{tel}</Text>
-                        <Text style={styles.description}>{mob}</Text>
+                        <Text style={styles.description}>{contact}</Text>
                         <Text style={styles.description}>{email}</Text>
                       </View>
                   </View>
