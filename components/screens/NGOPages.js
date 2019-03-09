@@ -5,13 +5,13 @@ import Sidebar from '../Sidebar';
 import Card from '../Card';
 import { Actions } from 'react-native-router-flux';
 
-export default class HomeScreen extends React.Component {
+export default class NGOPages extends React.Component {
   constructor(props){
     super(props);
     this.state = {}
 
     this.openDrawer = this.openDrawer.bind(this);
-    this.goRequestDet = this.goRequestDet.bind(this);
+    this.goNgoProfile = this.goNgoProfile.bind(this);
   }
 
     closeDrawer = () => {
@@ -21,7 +21,7 @@ export default class HomeScreen extends React.Component {
       this.drawer._root.open()
     };
 
-    goRequestDet = (ngoID) => {
+    goNgoProfile = (ngoID) => {
       Actions.NGOProfile({id:ngoID});
     }
 
@@ -32,7 +32,10 @@ export default class HomeScreen extends React.Component {
         <Card
           key={i}
           id={i}
-          doAction={this.goRequestDet}
+          title={"Test " + i}
+          date={"Children || Elderly || Companionship"}
+          text={"This is a test test"}
+          doAction={this.goNgoProfile}
         />
       )
     }

@@ -25,7 +25,7 @@ export default class SideBar extends React.Component {
             <ListItem button onPress={() => Actions.Profile()}>
               <Text>Profile</Text>
             </ListItem>
-            <ListItem button onPress={() => Actions.NGOProfile()}>
+            <ListItem button onPress={() => Actions.NGOPages()}>
               <Text>NGO Profile</Text>
             </ListItem>
             <ListItem button onPress={() => Actions.Login()}>
