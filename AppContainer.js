@@ -54,11 +54,8 @@ export default class AppContainer extends Component {
           <Scene key="HomeScreen" component={HomeScreen} initial={false} type="reset"/>
           <Scene key="NGOProfile" component={NGOProfile} />
           <Scene key="Profile" component={Profile} />
-<<<<<<< HEAD
           <Scene key="PeopleInvested" component={PeopleInvested} />
-=======
           <Scene key="Error" component={Error} />
->>>>>>> b978869f25be658e62ca10a42528081fcc818858
         </Scene>
       </Router>
     );
