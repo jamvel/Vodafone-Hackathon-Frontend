@@ -11,6 +11,7 @@ import Login from "./components/screens/Login/Login.js";
 import NGOProfile from "./components/screens/Profile/NGOProfile.js";
 import Profile from "./components/screens/Profile/Profile.js";
 import PeopleInvested from "./components/screens/PeopleInvested.js";
+import Error from "./components/screens/Error.js";
 
 export default class AppContainer extends Component {
   constructor() {
@@ -53,7 +54,11 @@ export default class AppContainer extends Component {
           <Scene key="HomeScreen" component={HomeScreen} initial={false} type="reset"/>
           <Scene key="NGOProfile" component={NGOProfile} />
           <Scene key="Profile" component={Profile} />
+<<<<<<< HEAD
           <Scene key="PeopleInvested" component={PeopleInvested} />
+=======
+          <Scene key="Error" component={Error} />
+>>>>>>> b978869f25be658e62ca10a42528081fcc818858
         </Scene>
       </Router>
     );

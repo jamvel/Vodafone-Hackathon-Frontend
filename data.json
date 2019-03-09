@@ -1,10 +1,10 @@
 {
   "NGOs":[
-    {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"boy1.png"},
-    {"id":2, "name":"NGO2", "address":"2 NGO Address", "tel":21249202, "mob":99887767, "email":"NGO.email2@gmail.com", "img":"girl1.png"},
-    {"id":4, "name":"NGO4", "address":"4 NGO Address", "tel":21249204, "mob":99887769, "email":"NGO.email4@gmail.com", "img":"male1.png"},
-		{"id":3, "name":"NGO3", "address":"3 NGO Address", "tel":21249203, "mob":99887768, "email":"NGO.email3@gmail.com", "img":"female1.png"},
-    {"id":5, "name":"NGO5", "address":"5 NGO Address", "tel":21249205, "mob":99887760, "email":"NGO.email5@gmail.com", "img":"boy1.png"}
+    {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"boy1.png"},
+    {"id":2, "name":"NGO2", "address":"2 NGO Address", "tel":21249202, "mob":99887767, "email":"NGO.email2@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"girl1.png"},
+    {"id":4, "name":"NGO4", "address":"4 NGO Address", "tel":21249204, "mob":99887769, "email":"NGO.email4@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"male1.png"},
+		{"id":3, "name":"NGO3", "address":"3 NGO Address", "tel":21249203, "mob":99887768, "email":"NGO.email3@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"female1.png"},
+    {"id":5, "name":"NGO5", "address":"5 NGO Address", "tel":21249205, "mob":99887760, "email":"NGO.email5@gmail.com","category":["Children", "Elderly", "Companionship"], "img":"boy1.png"}
   ],
   "Companies":[
     {"id":2, "name":"Company2", "address":"2 Company Address", "tel":21249202, "mob":99887767, "email":"company.email2@gmail.com", "img":"girl1.png"},
