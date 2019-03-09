@@ -1,42 +1,44 @@
 {
-	"NGOs": [{
-			"id": 1,
-			"name": "NGO1",
-			"address": "1 NGO Address",
-			"tel": 21249201,
-			"mob": 99887766,
-			"email": "NGO.email1@gmail.com"
-		}, {
-			"id": 2,
-			"name": "NGO2",
-			"address": "2 NGO Address",
-			"tel": 21249202,
-			"mob": 99887767,
-			"email": "NGO.email2@gmail.com"
-		},
-		{
-			"id": 3,
-			"name": "NGO3",
-			"address": "3 NGO Address",
-			"tel": 21249203,
-			"mob": 99887768,
-			"email": "NGO.email3@gmail.com"
-		},
-		{
-			"id": 4,
-			"name": "NGO4",
-			"address": "4 NGO Address",
-			"tel": 21249204,
-			"mob": 99887769,
-			"email": "NGO.email4@gmail.com"
-		},
-		{
-			"id": 5,
-			"name": "NGO5",
-			"address": "5 NGO Address",
-			"tel": 21249205,
-			"mob": 99887760,
-			"email": "NGO.email5@gmail.com"
-		}
-	]
+  "NGOs":[
+    {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"boy1.png"},
+    {"id":2, "name":"NGO2", "address":"2 NGO Address", "tel":21249202, "mob":99887767, "email":"NGO.email2@gmail.com", "img":"girl1.png"},
+    {"id":4, "name":"NGO4", "address":"4 NGO Address", "tel":21249204, "mob":99887769, "email":"NGO.email4@gmail.com", "img":"male1.png"},
+		{"id":3, "name":"NGO3", "address":"3 NGO Address", "tel":21249203, "mob":99887768, "email":"NGO.email3@gmail.com", "img":"female1.png"},
+    {"id":5, "name":"NGO5", "address":"5 NGO Address", "tel":21249205, "mob":99887760, "email":"NGO.email5@gmail.com", "img":"boy1.png"}
+  ],
+  "Companies":[
+    {"id":2, "name":"Company2", "address":"2 Company Address", "tel":21249202, "mob":99887767, "email":"company.email2@gmail.com", "img":"girl1.png"},
+		{"id":1, "name":"Company1", "address":"1 Company Address", "tel":21249201, "mob":99887766, "email":"company.email1@gmail.com", "img":"male1.png"},
+    {"id":3, "name":"Company3", "address":"3 Company Address", "tel":21249203, "mob":99887768, "email":"company.email3@gmail.com", "img":"female1.png"},
+    {"id":4, "name":"Company4", "address":"4 Company Address", "tel":21249204, "mob":99887769, "email":"company.email4@gmail.com", "img":"boy1.png"},
+    {"id":5, "name":"Company5", "address":"5 Company Address", "tel":21249205, "mob":99887760, "email":"company.email5@gmail.com", "img":"girl1.png"}
+  ],
+  "Receiver":[
+    {"id":1, "ngo": 4, "name":"Name1", "surname":"surname1", "description":"1 Description", "idNum":"15396M", "mob":99887766, "img":"male1.png"},
+    {"id":2, "ngo": 3, "name":"Name2", "surname":"surname2", "description":"2 Description", "idNum":"963213M", "mob":99887767, "img":"female1.png"},
+    {"id":3, "ngo": 2, "name":"Name3", "surname":"surname3", "description":"3 Description", "idNum":"895636M", "mob":99887768, "img":"boy1.png"},
+    {"id":4, "ngo": 5, "name":"Name4", "surname":"surname4", "description":"4 Description", "idNum":"1235G", "mob":99887769, "img":"girl1.png"},
+    {"id":5, "ngo": 1, "name":"Name5", "surname":"surname5", "description":"5 Description", "idNum":"963452M", "mob":99887760, "img":"male1.png"}
+  ],
+  "Provider":[
+    {"id":1, "company": 4, "name":"Name1", "surname":"surname1", "idNum":"121396M", "fund":3.65, "img":"female1.png"},
+    {"id":2, "company": 3, "name":"Name2", "surname":"surname2", "idNum":"9613213M", "fund":5.69, "img":"boy1.png"},
+    {"id":3, "company": 2, "name":"Name3", "surname":"surname3", "idNum":"89241336M", "fund":500, "img":"girl1.png"},
+    {"id":4, "company": 5, "name":"Name4", "surname":"surname4", "idNum":"123455G", "fund":30, "img":"male1.png"},
+    {"id":5, "company": 1, "name":"Name5", "surname":"surname5", "idNum":"9631232M", "fund":58, "img":"female1.png"}
+  ],
+  "Needs":[
+    {"nId":1, "ngoId":4, "target":5, "current":2, "reason": "Reason 1","how":"How 1", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z"},
+    {"nId":2, "ngoId":3, "target":600, "current":200, "reason": "Reason 2","how":"How 2", "startDate":"2019-05-25T18:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z"},
+    {"nId":3, "ngoId":1, "target":0.5, "current":20, "reason": "Reason 3","how":"How 3", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z"},
+    {"nId":4, "ngoId":5, "target":30, "current":2, "reason": "Reason 4","how":"How 4", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z"},
+    {"nId":5, "ngoId":2, "target":70, "current":20, "reason": "Reason 5","how":"How 5", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z"}
+  ],
+  "Requests":[
+    {"nId":1, "reqId":4, "target":5, "current":2, "reason": "Reason 1","how":"How 1", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z", "hide":false},
+    {"nId":2, "reqId":3, "target":600, "current":200, "reason": "Reason 2","how":"How 2", "startDate":"2019-05-25T18:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z", "hide":false},
+    {"nId":3, "reqId":1, "target":0.5, "current":20, "reason": "Reason 3","how":"How 3", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z", "hide":true},
+    {"nId":4, "reqId":5, "target":30, "current":2, "reason": "Reason 4","how":"How 4", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z", "hide":false},
+    {"nId":5, "reqId":2, "target":70, "current":20, "reason": "Reason 5","how":"How 5", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z", "hide":true}
+  ]
 }
