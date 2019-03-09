@@ -1,33 +1,54 @@
 import React, { Component } from 'react';
 import {
+  Container,
+  Content,
   StyleSheet,
   Text,
   View,
   Image,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView,
+  List,
+  ListItem,
+  TextInput,
+  AppRegistry
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class NGOProfile extends Component {
   render() {
     return (
-      <View style={styles.container}>
-          <View style={styles.header}></View>
-          <Image style={styles.avatar} source={require('../../../assets/Ngos/SJA.png')}/>
-          <View style={styles.body}>
-            <View style={styles.bodyContent}>
-              <Text style={styles.name}>John Doe</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
+         <View>
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={styles.header}></View>
+                    <Image style={styles.avatar} source={require('../../../assets/Ngos/SJA.png')}/>
+                    <View style={styles.body}>
+                      <View style={styles.bodyContent}>
+                        <Text style={styles.name}>John Doe</Text>
+                        <Text style={styles.info}>UX Designer / Mobile developer</Text>
+                        <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
+                      </View>
+                  </View>
+                </View>
 
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 1</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 2</Text>
-              </TouchableOpacity>
-            </View>
-        </View>
-      </View>
+                <Text style={styles.title}>Active Requests</Text>
+
+
+
+                <Text style={styles.title}>Donate Time</Text>
+                <TextInput
+                placeholder="amount in hours"
+                placeholderTextColor="rgba(255,255,255,0.7)"
+                returnKeyType="next"
+                keyboardType="numeric"
+                style={styles.input}
+                />
+                <TouchableOpacity style={styles.buttonContainer}>
+                  <Text>Submit</Text>
+                </TouchableOpacity>
+            </ScrollView>
+         </View>
     );
   }
 }
@@ -88,4 +109,13 @@ const styles = StyleSheet.create({
     borderRadius:30,
     backgroundColor: "#00BFFF",
   },
+  title:{
+    color: '#FFFFFF',
+    marginTop: 10,
+    width: 160,
+    textAlign: 'center',
+    fontSize: 25,
+    fontWeight: '700',
+    opacity: 0.5
+  }
 });
