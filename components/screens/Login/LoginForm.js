@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, KeyboardAvoidingView, StatusBar} from 'react-native'
+import { StyleSheet, View, Image, TextInput, TouchableOpacity, Text, KeyboardAvoidingView, StatusBar} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class LoginForm extends Component{
   render(){
@@ -29,7 +30,12 @@ export default class LoginForm extends Component{
           />
 
           <TouchableOpacity style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>LOGIN</Text>
+            <Text
+              style={styles.buttonText}
+              onPress={() => Actions.HomeScreen()}
+            >
+            LOGIN
+            </Text>
           </TouchableOpacity>
       </View>
       </KeyboardAvoidingView>

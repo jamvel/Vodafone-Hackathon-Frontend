@@ -1,5 +1,5 @@
 import React from 'react';
-import AppContainer from "./components/AppContainer";
+import AppContainer from "./AppContainer";
 import styles from "./styles/global.scss";
 
 class App extends React.Component {

@@ -4,8 +4,10 @@ import { Ionicons } from '@expo/vector-icons';
 import React, { Component } from "react";
 import { View,  Platform } from 'react-native';
 import { Container, Header, Content, List, ListItem, Text } from 'native-base';
+import { Router, Scene } from 'react-native-router-flux';
 
-import App from "./App.js";
+import HomeScreen from "./components/screens/Homescreen.js";
+import Login from "./components/screens/Login/Login.js";
 
 export default class AppContainer extends Component {
   constructor() {
@@ -42,9 +44,12 @@ export default class AppContainer extends Component {
       return <Expo.AppLoading />;
     }
     return (
-      <>
-        <App />
-      </>
+      <Router hideNavBar= "true">
+        <Scene key="root" hideNavBar= "true">
+          <Scene key="Login" component={Login} initial={true} />
+          <Scene key="HomeScreen" component={HomeScreen} initial={false} type="reset"/>
+        </Scene>
+      </Router>
     );
   }
 }
