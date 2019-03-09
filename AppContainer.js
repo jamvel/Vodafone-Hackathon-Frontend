@@ -8,6 +8,8 @@ import { Router, Scene } from 'react-native-router-flux';
 
 import HomeScreen from "./components/screens/Homescreen.js";
 import Login from "./components/screens/Login/Login.js";
+import NGOProfile from "./components/screens/Profile/NGOProfile.js";
+import Profile from "./components/screens/Profile/Profile.js";
 
 export default class AppContainer extends Component {
   constructor() {
@@ -48,6 +50,8 @@ export default class AppContainer extends Component {
         <Scene key="root" hideNavBar= "true">
           <Scene key="Login" component={Login} initial={true} />
           <Scene key="HomeScreen" component={HomeScreen} initial={false} type="reset"/>
+          <Scene key="NGOProfile" component={NGOProfile} />
+          <Scene key="Profile" component={Profile} />
         </Scene>
       </Router>
     );
