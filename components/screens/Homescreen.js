@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "../Header.js"
-import { Container, Title, Left, Icon, Right, Button, Body, Content,Text, Card, CardItem , Drawer} from "native-base";
+import { Container, Title, Left, Icon, Right, Button, Body, Content,Text, Drawer} from "native-base";
 import Sidebar from '../Sidebar';
+import Card from '../Card';
+import { Actions } from 'react-native-router-flux';
 
 export default class HomeScreen extends React.Component {
   constructor(props){
@@ -9,6 +11,7 @@ export default class HomeScreen extends React.Component {
     this.state = {}
 
     this.openDrawer = this.openDrawer.bind(this);
+    this.goNgoProfile = this.goNgoProfile.bind(this);
   }
 
     closeDrawer = () => {
@@ -18,21 +21,20 @@ export default class HomeScreen extends React.Component {
       this.drawer._root.open()
     };
 
+    goNgoProfile = (ngoID) => {
+      Actions.NGOProfile({id:ngoID});
+    }
+
   render() {
     const Cards = [];
     for(let i = 0; i < 5; i++){
       Cards.push(
-        <Card key={i} style={{marginTop:5,height:250}}>
-          <CardItem header bordered>
-            <Body>
-              <Text>
-                 Card Title {i}
-              </Text>
-            </Body>
-            <Text style={{fontSize:12}}>dd/mm/yy hh:mm</Text>
-          </CardItem>
-        </Card>
-      );
+        <Card
+          key={i}
+          id={i}
+          doAction={this.goNgoProfile}
+        />
+      )
     }
 
     return (

@@ -11,7 +11,7 @@ export default class Login extends Component{
         <Image
           style={styles.logo}
           source={require('../../../assets/Fire.png')}/>
-          <Text style={styles.title}>Rekindle</Text>
+        <Text style={styles.title}>reKindle</Text>
 			</View>
 			<View style={styles.formContainer}>
         <LoginForm />
@@ -38,10 +38,9 @@ const styles = StyleSheet.create({
   title:{
     color: '#FFFFFF',
     marginTop: 10,
-    width: 160,
     textAlign: 'center',
-    fontSize: 25,
-    fontWeight: '700',
+    fontSize: 44,
+    fontWeight: 'bold',
     opacity: 0.5
   }
 });
