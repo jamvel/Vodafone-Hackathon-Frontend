@@ -1,41 +1,33 @@
 import React, { Component } from 'react';
-import {  StyleSheet,  Text,  View,  Image,  TouchableOpacity, ScrollView} from 'react-native';
-
-import PhotoGrid from '../../PhotoGrid.js';
-//const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"../../../assets/Profiles/boy1.png"};
-const data = {"id":1, "company": 4, "name":"John", "surname":"Doe", "idNum":"121396M", "fund":3.65, "time": 5, "img":"female1.png"};
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity
+} from 'react-native';
 
 export default class Profile extends Component {
   render() {
-    const fullName = data.name + " " + data.surname;
-    const funds = "Money Invested: #" + data.fund;
-    const time = "Time Invested: " + data.time + " hours";
-    const companyName = "Vodafone Malta";
     return (
-      <ScrollView>
       <View style={styles.container}>
           <View style={styles.header}></View>
-          <Image style={styles.avatar} source={require("../../../assets/Profiles/female1.png")}/>
+          <Image style={styles.avatar} source={require('../../assets/Profiles/male1.png')}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}>{fullName}</Text>
-              <Text style={styles.funds}>{funds}</Text>
-              <Text style={styles.funds}>{time}</Text>
-              <Text style={styles.info}>{companyName}</Text>
+              <Text style={styles.name}>John Doe</Text>
+              <Text style={styles.info}>UX Designer / Mobile developer</Text>
+              <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text>
 
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Option 1</Text>
+                <Text>Opcion 1</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Option 2</Text>
+                <Text>Opcion 2</Text>
               </TouchableOpacity>
-              <View style = {styles.container}>
-                <PhotoGrid />
-              </View>
             </View>
         </View>
       </View>
-        </ScrollView>
     );
   }
 }
@@ -56,9 +48,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     marginTop:130
   },
-  funds:{
+  name:{
     fontSize:22,
-    color:"#696968",
+    color:"#FFFFFF",
     fontWeight:'600',
   },
   body:{
@@ -96,8 +88,4 @@ const styles = StyleSheet.create({
     borderRadius:30,
     backgroundColor: "#00BFFF",
   },
-  container:{
-    flex: 1,
-    backgroundColor: "#FFFFFF"
-  }
 });
