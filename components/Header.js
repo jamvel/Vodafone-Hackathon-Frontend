@@ -21,6 +21,10 @@ export default class AppHeader extends React.Component {
          <Body>
            <Title>{this.props.title}</Title>
          </Body>
+         <Right>
+            <Icon name='flame' style={{marginRight:5,color:"white",fontSize:16}} />
+            <Text style={{color:"white",fontSize:17}}>50</Text>
+          </Right>
        </Header>
     );
   }
