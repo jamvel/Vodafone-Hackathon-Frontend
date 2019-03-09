@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {  StyleSheet,  Text,  View,  Image,  TouchableOpacity, ScrollView} from 'react-native';
+import { AppRegistry, Image, StatusBar, View, StyleSheet,  Text,  TouchableOpacity, ScrollView} from 'react-native';
+import { Container, Content, List, ListItem } from "native-base";
+import { Actions } from 'react-native-router-flux';
 
 import PhotoGrid from '../../PhotoGrid.js';
 //const data = {"id":1, "name":"NGO1", "address":"1 NGO Address", "tel":21249201, "mob":99887766, "email":"NGO.email1@gmail.com", "img":"../../../assets/Profiles/boy1.png"};
@@ -22,19 +24,17 @@ export default class Profile extends Component {
               <Text style={styles.funds}>{funds}</Text>
               <Text style={styles.funds}>{time}</Text>
               <Text style={styles.info}>{companyName}</Text>
-
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Option 1</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Option 2</Text>
-              </TouchableOpacity>
               <View style = {styles.container}>
                 <PhotoGrid />
               </View>
             </View>
         </View>
       </View>
+          <List>
+            <ListItem button onPress={() => Actions.PeopleInvested()}>
+              <Text>Projects invested in</Text>
+            </ListItem>
+          </List>
         </ScrollView>
     );
   }

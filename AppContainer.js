@@ -11,6 +11,7 @@ import Login from "./components/screens/Login/Login.js";
 import NGOProfile from "./components/screens/Profile/NGOProfile.js";
 import NGOPages from "./components/screens/NGOPages.js";
 import Profile from "./components/screens/Profile/Profile.js";
+import PeopleInvested from "./components/screens/PeopleInvested.js";
 import Error from "./components/screens/Error.js";
 
 export default class AppContainer extends Component {
@@ -55,6 +56,7 @@ export default class AppContainer extends Component {
           <Scene key="NGOProfile" component={NGOProfile} />
           <Scene key="NGOPages" component={NGOPages} />
           <Scene key="Profile" component={Profile} />
+          <Scene key="PeopleInvested" component={PeopleInvested} />
           <Scene key="Error" component={Error} />
         </Scene>
       </Router>
