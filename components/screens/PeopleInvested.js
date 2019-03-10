@@ -45,6 +45,7 @@ export default class PeopleInvested extends React.Component {
         onClose={() => this.closeDrawer()} >
           <Header
             openDrawer={this.openDrawer}
+            title="My Contributions"
           />
           <Content>
             {Cards}

@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Grid, Text, Card, CardItem, Content, Body} from "native-base";
+import { Container, Grid, Text, Card, CardItem, Content, Body, Icon, Button} from "native-base";
 import { View, ScrollView } from "react-native";
 import Timeline from 'react-native-timeline-listview';
+import NumericInput from 'react-native-numeric-input';
 import PropTypes from 'prop-types';
 
 export default ProjectContent = (props) => (
@@ -23,7 +24,7 @@ export default ProjectContent = (props) => (
           </Body>
         </CardItem>
       </Card>
-      <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>My Story</Text>
+      <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>My Story <Icon name='book' style={{marginRight:7,color:"#3498db",fontSize:36}}/></Text>
         <Timeline
           data={props.data}
           circleSize={30}
@@ -47,6 +48,42 @@ export default ProjectContent = (props) => (
           }}
         />
 
+      <Card style={{marginTop:15}}>
+        <CardItem header>
+          <Text style={{fontSize:32,textAlign:"center",fontWeight:"bold"}}>Donate <Icon name='flame' style={{marginRight:5,color:"#3498db",fontSize:34}}/></Text>
+        </CardItem>
+        <CardItem>
+          <Body>
+            <Text>
+              WhyDonate..
+              NativeBase is a free and open source framework that enable
+              developers to build
+              high-quality mobile apps using React Native iOS and Android
+              apps
+              with a fusion of ES6.
+            </Text>
+            <View style={{width:"100%",flex:1,justifyContent:'center',alignItems:'center',marginTop:15}}>
+              <NumericInput
+                onChange={value => {}}
+                minValue={0}
+                totalWidth={300}
+                totalHeight={50}
+                iconSize={30}
+                step={1}
+                valueType='integer'
+                rounded
+                textColor='grey'
+                iconStyle={{ color: 'white' }}
+                rightButtonBackgroundColor='#3498db'
+                leftButtonBackgroundColor='#879dc1'
+                style={{justifyContent:'center',alignItems:'center'}}
+                />
+              <Button primary block style={{marginTop:15,borderRadius:10,height:60}}><Text> Make my donation ! </Text></Button>
+            </View>
+
+          </Body>
+        </CardItem>
+      </Card>
     </Content>
 </ScrollView>
 );

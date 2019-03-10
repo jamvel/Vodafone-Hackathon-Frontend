@@ -42,6 +42,7 @@ export default class NGOPages extends React.Component {
           id={i}
           title={data[i].name}
           date={category}
+          icon="book"
           text={data[i].address}
           doAction={this.goNgoProfile}
         />
@@ -56,6 +57,7 @@ export default class NGOPages extends React.Component {
         onClose={() => this.closeDrawer()} >
           <Header
             openDrawer={this.openDrawer}
+            title="NGOs"
           />
           <Content>
             {Cards}
