@@ -2,7 +2,7 @@ import * as Expo from "expo";
 import { Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import React, { Component } from "react";
-import { View,  Platform } from 'react-native';
+import { View,  Platform , AsyncStorage } from 'react-native';
 import { Container, Header, Content, List, ListItem, Text } from 'native-base';
 import { Router, Scene } from 'react-native-router-flux';
 
@@ -28,6 +28,13 @@ export default class AppContainer extends Component {
 
   componentWillMount() {
     this.loadFonts();
+    AsyncStorage.getItem('balance').then((value) => {
+      if(value == null || parseInt(value) <= 5){
+        AsyncStorage.setItem('balance', "105").then((value) => {
+        })
+      }else{
+      }
+    })
   }
 
   async loadFonts() {

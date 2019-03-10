@@ -1,96 +1,161 @@
 import React from "react";
 import { Container, Grid, Text, Card, CardItem, Content, Body, StyleSheet, Icon, Button} from "native-base";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView , AsyncStorage , TextInput } from "react-native";
 import Timeline from 'react-native-timeline-listview';
-import NumericInput from 'react-native-numeric-input';
 import PropTypes from 'prop-types';
+import AwesomeAlert from 'react-native-awesome-alerts';
 
-export default ProjectContent = (props) => (
-  <ScrollView>
-    <Content>
-      <Card>
-        <CardItem header bordered>
-          <Text style={{fontSize:24}}>Description</Text>
-        </CardItem>
-        <CardItem bordered>
-          <Body>
-            <Text>
-              {props.description[props.id]}
-            </Text>
-          </Body>
-        </CardItem>
-      </Card>
-      <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>Our Journey <Icon name='book' style={{marginRight:7,color:"#3498db",fontSize:36}}/></Text>
-        <Timeline
-          data={props.data[props.id]}
-          circleSize={30}
-          circleColor='rgb(45,156,219)'
-          lineColor='rgb(45,156,219)'
-          titleStyle={{fontSize:24}}
-          descriptionStyle={{color:'gray',paddingVertical:5}}
-          options={{
-            style:{paddingTop:5}
+export default class ProjectContent extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      payValue:"0",
+      showAlert:false
+    }
+  }
+
+  showAlert = () => {
+    this.setState({
+      showAlert: true
+    });
+  };
+
+  hideAlert = () => {
+    this.setState({
+      showAlert: false
+    });
+  };
+
+  onChanged(text){
+    let newText = '';
+    let numbers = '0123456789';
+
+    for (var i=0; i < text.length; i++) {
+        if(numbers.indexOf(text[i]) > -1 ) {
+            newText = newText + text[i];
+        }
+        else {
+            // your call back function
+            alert("please enter numbers only");
+        }
+    }
+    this.setState({ payValue: newText });
+  }
+
+  render() {
+    return(
+      <ScrollView>
+        <Content>
+          <Card>
+            <CardItem header bordered>
+              <Text style={{fontSize:24}}>Description</Text>
+            </CardItem>
+            <CardItem bordered>
+              <Body>
+                <Text>
+                  {this.props.description[this.props.id]}
+                </Text>
+              </Body>
+            </CardItem>
+          </Card>
+          <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>Our Journey <Icon name='book' style={{marginRight:7,color:"#3498db",fontSize:36}}/></Text>
+            <Timeline
+              data={this.props.data[this.props.id]}
+              circleSize={30}
+              circleColor='rgb(45,156,219)'
+              lineColor='rgb(45,156,219)'
+              titleStyle={{fontSize:24}}
+              descriptionStyle={{color:'gray',paddingVertical:5}}
+              options={{
+                style:{paddingTop:5}
+              }}
+              showTime={false}
+              style={{marginLeft:8,marginTop:20}}
+              seperator={true}
+              seperatorStyle={{color:"gray"}}
+              onEventPress={(event)=>{
+                console.log(event);
+                if(!this.props.overlayShown){
+                  this.props.updateOverlayContent(event.title,event.extraInfo);
+                  this.props.toggleOverlay(true);
+                }
+              }}
+            />
+
+          <Card style={{marginTop:15}}>
+            <CardItem header>
+              <Text style={{fontSize:32,textAlign:"center",fontWeight:"bold"}}>Donate <Icon name='flame' style={{marginRight:5,color:"#3498db",fontSize:34}}/></Text>
+            </CardItem>
+            <CardItem>
+              <Body>
+                <View style={{width:"100%",flex:1,justifyContent:'center',alignItems:'center',marginTop:15}}>
+
+                  <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+                    <TextInput
+                     style={{fontSize:44,fontWeight:"bold"}}
+                     keyboardType='numeric'
+                     onChangeText={(text)=> this.onChanged(text)}
+                     value={this.state.payValue}
+                     maxLength={4}
+                    />
+                  </View>
+
+                  <Button primary block
+                    style={{marginTop:15,borderRadius:10,height:60}}
+                    onPress={()=> {
+                      this.showAlert();
+                    }}
+                    >
+                    <Text> Make my donation ! </Text>
+                  </Button>
+                </View>
+
+              </Body>
+            </CardItem>
+          </Card>
+        </Content>
+        <AwesomeAlert
+          show={this.state.showAlert}
+          showProgress={false}
+          title="Confirmation"
+          message="You are about to submit a contribution to help this story!"
+          closeOnTouchOutside={true}
+          closeOnHardwareBackPress={false}
+          showCancelButton={true}
+          showConfirmButton={true}
+          cancelText="No, cancel"
+          confirmText="Yes, I want to help!"
+          confirmButtonColor="#3498db"
+          onCancelPressed={() => {
+            this.hideAlert();
           }}
-          showTime={false}
-          style={{marginLeft:8,marginTop:20}}
-          seperator={true}
-          seperatorStyle={{color:"gray"}}
-          onEventPress={(event)=>{
-            console.log(event);
-            if(!props.overlayShown){
-              props.updateOverlayContent(event.title,event.extraInfo);
-              props.toggleOverlay(true);
-            }
+          onConfirmPressed={() => {
+            AsyncStorage.getItem('balance').then((value) => {
+              let balance = parseInt(value);
+              balance = balance - parseInt(this.state.payValue);
+              if(balance > 0){
+                AsyncStorage.setItem('balance', balance.toString()).then((value) => {
+                  //signal to header
+                  this.props.updateBalanceFlag();
+                  this.setState({payValue:"0"});
+                })
+              }else{
+                console.log("Not enough Balance");
+              }
+            });
+            this.hideAlert();
           }}
         />
-
-      <Card style={{marginTop:15}}>
-        <CardItem header>
-          <Text style={{fontSize:32,textAlign:"center",fontWeight:"bold"}}>Donate <Icon name='flame' style={{marginRight:5,color:"#3498db",fontSize:34}}/></Text>
-        </CardItem>
-        <CardItem>
-          <Body>
-            <Text>
-              WhyDonate..
-              NativeBase is a free and open source framework that enable
-              developers to build
-              high-quality mobile apps using React Native iOS and Android
-              apps
-              with a fusion of ES6.
-            </Text>
-            <View style={{width:"100%",flex:1,justifyContent:'center',alignItems:'center',marginTop:15}}>
-              <NumericInput
-                onChange={value => {}}
-                minValue={0}
-                totalWidth={300}
-                totalHeight={50}
-                iconSize={30}
-                step={1}
-                valueType='integer'
-                rounded
-                textColor='grey'
-                iconStyle={{ color: 'white' }}
-                rightButtonBackgroundColor='#3498db'
-                leftButtonBackgroundColor='#879dc1'
-                style={{justifyContent:'center',alignItems:'center'}}
-                />
-              <Button primary block style={{marginTop:15,borderRadius:10,height:60}}><Text> Make my donation ! </Text></Button>
-            </View>
-
-          </Body>
-        </CardItem>
-      </Card>
-    </Content>
-</ScrollView>
-);
-
+    </ScrollView>
+  )}
+}
 ProjectContent.defaultProps = {
   id: 0,
   description:["As an NGO we have been experiencing several costs and cannot afford to pay for social workers to work with us. Social help would be greatly appreciated from anyone that can lend a hand",
                "Our current driver has a health issue which needs imminent attention. We require a driver for a limited amount of time to drive our residents to where they need to go",
                "The needs of this NGO outweigh the resources we currently have available. Therefore we have decided to expand our premesis and require physically abled persons to help us carry our furniture",
                "We are a small voluntary organisation who have a hard time making ends meet due to the vast amount of cases we get each week. We require energetic individuals who are willing to take care of our residents.",
-               "During last week's storm our facilities experienced a lot of strucutral damange. We therefore require experienced individuals who can help us carry out maintenance throughout the complex.",
+               "During last week's storm our facilities experienced a lot of strucutral damage. We therefore require experienced individuals who can help us carry out maintenance throughout the complex.",
                "A month ago I had a bad experience where I ended up being the victim of an unfortunate accident. Unfortunately this experience has left me paralysed for most of my body. I therefore require an electronic wheelchair which costs too much for me to pay",
                "Our child has been suffering from ABC syndrome for the past year. His condition has drained our funds but we refuse to give up on him. The trip to London may be a life changing moment for us all and therefore we need your help in paying the expenses",
                "I just got out of prison and have started a new life. However, I am homeless and need help getting on my feet. Kindly help me find an apartment from where I can get my life back on track.",

@@ -105,7 +105,7 @@ export default class NGOProfile extends Component {
                                 }}
                                 onDateChange={(date) => {this.setState({date: date})}}
                               />
-                            <TouchableOpacity onPress = {showAlert} style = {styles.buttonContainer} onPress={this._toggleModal}>
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
                               <Text>Submit</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
