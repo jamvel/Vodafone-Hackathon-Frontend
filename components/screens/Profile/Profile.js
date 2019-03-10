@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, Image, StatusBar, View, StyleSheet,  Text,  TouchableOpacity, ScrollView} from 'react-native';
-import { Container, Content, List, ListItem } from "native-base";
+import { Container, Content, List, ListItem, Button } from "native-base";
 import { Actions } from 'react-native-router-flux';
 
 import PhotoGrid from '../../PhotoGrid.js';
@@ -10,8 +10,8 @@ const data = {"id":5, "company": 0, "companyName": "Vodafone", "name":"Luke", "s
 export default class Profile extends Component {
   render() {
     const fullName = data.name + " " + data.surname;
-    const funds = "Money Invested: #" + data.fund;
-    const timeSpent = "Time Invested: " + data.hours + " hours";
+    const funds = "Money Invested: Euro " + data.fund;
+    const timeSpent = "Time Invested: " + data.hours + " Hours";
     const companyName = data.companyName;
     const companyID = data.company;
     return (
@@ -32,13 +32,9 @@ export default class Profile extends Component {
               </View>
             </View>
         </View>
+        <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={() => Actions.PeopleInvested()}><Text style={{color: 'white'}}> Projects invested in </Text></Button>
       </View>
-          <List>
-            <ListItem button onPress={() => Actions.PeopleInvested()}>
-              <Text>Projects invested in</Text>
-            </ListItem>
-          </List>
-        </ScrollView>
+    </ScrollView>
     );
   }
 }
@@ -80,7 +76,8 @@ const styles = StyleSheet.create({
   info:{
     fontSize:16,
     color: "#00BFFF",
-    marginTop:10
+    marginTop:10,
+    fontWeight:'600'
   },
   description:{
     fontSize:16,

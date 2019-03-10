@@ -10,7 +10,7 @@ const needs = [
 ];
 
 const requests = [
-  {"nId":1, "reqId":4, "target":5, "current":2, "reason": "Rent a flat to get off the streets","how":"Due to a domestic accident I lost my house and all of my possessions. I have been homeless for the past 2 months and wish to reintegrate myself within the community", "startDate":"2017-02-25", "endDate":"2019-04-27", "hide":false},
+  {"nId":1, "reqId":4, "target":5, "current":5, "reason": "Rent a flat to get off the streets","how":"Due to a domestic accident I lost my house and all of my possessions. I have been homeless for the past 2 months and wish to reintegrate myself within the community", "startDate":"2017-02-25", "endDate":"2019-04-27", "hide":false},
 ];
 
 export default class PeopleInvested extends React.Component {
@@ -43,6 +43,8 @@ export default class PeopleInvested extends React.Component {
           title={needs[i].reason}
           text={needs[i].how}
           date={needs[i].startDate}
+          current={needs[i].current}
+          target={needs[i].target}
           doAction={this.goRequestDet}
         />
       ),
@@ -53,6 +55,8 @@ export default class PeopleInvested extends React.Component {
           title={requests[i].reason}
           text={requests[i].how}
           date={requests[i].startDate}
+          current={needs[i].current}
+          target={needs[i].target}
           doAction={this.goRequestDet}
         />
       )

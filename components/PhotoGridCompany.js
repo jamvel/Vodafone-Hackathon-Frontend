@@ -9,18 +9,18 @@ export default class PhotoGridCompany extends React.Component {
     return (
         <View style = {styles.photoGrid}>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Trophies/goldTrophy.png")} />
+            <Image style={styles.photo} source={require("../assets/Badges/Trophies/goldTrophy.png")} />
             <View style={styles.overlay} />
-            <Text> 15 more hours of Community Work to get badge </Text>
+            <Text>Achieved after 2000 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Trophies/silverTrophy.png")} />
+            <Image style={styles.photo} source={require("../assets/Badges/Trophies/silverTrophy.png")} />
             <View style={styles.overlay} />
-            <Text> 5 more hours of Community Work to get badge </Text>
+            <Text>Achieved after 1000 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Trophies/bronzeTrophy.png")} />
-            <Text> Achieved at 5 hours of Community Work </Text>
+            <Text>Achieved after 500 hours of Community Work </Text>
           </View>
         </View>
     );
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   photoGrid:{
     flexDirection:'row',
     flexWrap: 'wrap',
-    justifyContent: 'center' 
+    justifyContent: 'center'
   },
   photoWrap:{
     margin:2,

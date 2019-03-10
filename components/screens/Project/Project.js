@@ -87,6 +87,9 @@ export default class Project extends React.Component {
               overlayShown={this.state.modalVisible}
               updateOverlayContent={this.updateOverlayContent}
               updateBalanceFlag={this.updateBalanceFlag}
+              target={this.props.target}
+              current={this.props.current}
+
             />
           </Content>
 

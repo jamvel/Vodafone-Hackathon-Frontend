@@ -4,6 +4,7 @@ import { View, ScrollView , AsyncStorage , TextInput } from "react-native";
 import Timeline from 'react-native-timeline-listview';
 import PropTypes from 'prop-types';
 import AwesomeAlert from 'react-native-awesome-alerts';
+import Speedometer from 'react-native-speedometer-chart';
 
 export default class ProjectContent extends React.Component {
   constructor(props){
@@ -81,6 +82,19 @@ export default class ProjectContent extends React.Component {
                 }
               }}
             />
+
+            <Card style={{marginTop:15}}>
+              <CardItem header>
+                <Text style={{fontSize:32,textAlign:"center",fontWeight:"bold"}}>Total Progress</Text>
+              </CardItem>
+              <CardItem>
+                <Body>
+                  <View style={{width:"100%",flex:1,justifyContent:'center',alignItems:'center',marginTop:15}}>
+                    <Speedometer internalColor='#2c9cdb' value={this.props.current} totalValue={this.props.target} showIndicator />
+                  </View>
+                </Body>
+              </CardItem>
+            </Card>
 
           <Card style={{marginTop:15}}>
             <CardItem header>
@@ -209,6 +223,8 @@ ProjectContent.defaultProps = {
     {"title": "[Blog Post]", "description": "I would like to thank all of you who believed in me and invested their time and money to get me a little appartment and a steady job. I would like you to know that I am back on my feet and looking forward to life's new challenges","extraInfo":"Thank You!"}
   ]],
   overlayShown:false,
+  target:100,
+  current:100,
   toggleOverlay:()=>{},
   updateOverlayContent: ()=>{}
 }

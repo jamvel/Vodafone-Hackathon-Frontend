@@ -43,7 +43,7 @@ export default class CompanyProfile extends Component {
   render() {
     const employeeHours = "Total Employee Hours Accumulated: " + data[this.props.id].employeeHours;
     const address = "Address: " + data[this.props.id].address;
-    const mob = "Mobile: " + data[this.props.id].contact;
+    const mob = "Contact Number: " + data[this.props.id].contact;
     const email = "Email: " + data[this.props.id].email;
     const startDate = "Start Date: " + data[this.props.id].startDate;
     const sponsorScheme = "Sponsor Scheme: " + data[this.props.id].sponsorScheme;
@@ -113,7 +113,8 @@ const styles = StyleSheet.create({
     fontSize:16,
     color: "#00BFFF",
     marginTop:10,
-    textAlign: 'left'
+    textAlign: 'left',
+    fontWeight:'600'
   },
   description:{
     fontSize:16,

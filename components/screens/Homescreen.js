@@ -4,6 +4,9 @@ import { Container, Title, Left, Icon, Right, Button, Body, Content,Text, Drawer
 import Sidebar from '../Sidebar';
 import Card from '../Card';
 import { Actions } from 'react-native-router-flux';
+import Modal from "react-native-modal";
+import { View, TextInput, Dimensions, TouchableOpacity} from 'react-native';
+import { CheckBox } from 'react-native-elements'
 
 const needs = [
   {"nId":1, "ngoId":4, "target":5, "current":2, "reason": "Social Workers","how":"Due to several unforseen expenses we have fallen behind in paying wages and consequently we don't have any social workers and need individuals to help out", "startDate":"2019-02-24", "endDate":"2019-04-27"},
@@ -24,7 +27,27 @@ const requests = [
 export default class HomeScreen extends React.Component {
   constructor(props){
     super(props);
-    this.state = {}
+    if(this.props.id == undefined){
+      this.state = {
+        isModalVisible: false,
+        checkedCar: true,
+        checkedMaw: true,
+        checkedRf:true,
+        checkedJs:true,
+        checkedSo:true
+     }
+
+   }else{
+     console.log(this.props.id);
+      this.state = {
+        isModalVisible: false,
+        checkedCar: (this.props.id == 1)? true : false,
+        checkedMaw: (this.props.id == 2)? true : false,
+        checkedRf:(this.props.id == 3)? true : false,
+        checkedJs:(this.props.id == 4)? true : false,
+        checkedSo:(this.props.id == 5)? true : false
+     }
+  }
 
     this.openDrawer = this.openDrawer.bind(this);
     this.goRequestDet = this.goRequestDet.bind(this);
@@ -38,32 +61,92 @@ export default class HomeScreen extends React.Component {
     };
 
     goRequestDet = (reqID) => {
-      Actions.Project({id:reqID});
+      if(reqID % 2 == 0){
+        if(reqID == 0){
+          Actions.Project({id:reqID, target:needs[reqID].target, current:needs[reqID].current});
+        }else{
+          var newReqId = reqID/2;
+          Actions.Project({id:newReqId, target:needs[newReqId].target, current:needs[newReqId].current});
+        }
+      }else{
+        var newReqId = reqID-1;
+        if(reqID == 0){
+          Actions.Project({id:reqID, target:requests[reqID].target, current:requests[reqID].current});
+        }else{
+          newReqId = newReqId/2;
+          Actions.Project({id:newReqId, target:requests[newReqId].target, current:requests[newReqId].current});
+        }
+      }
     }
+
+    _toggleModal = () =>
+       this.setState({ isModalVisible: !this.state.isModalVisible });
+
+    _resetForm = () =>
+      {
+        this.setState({ isModalVisible: false })
+        this.setState({ checkedCar: true })
+        this.setState({ checkedMaw: true })
+        this.setState({ checkedRf: true })
+        this.setState({ checkedJs: true })
+        this.setState({ checkedSo: true })
+      };
 
   render() {
     const Cards = [];
-    for(let i = 0; i < 5; i++){
-      Cards.push(
-        <Card
-          key={i}
-          id={i}
-          title={needs[i].reason}
-          text={needs[i].how}
-          date={needs[i].startDate}
-          doAction={this.goRequestDet}
-        />
-      ),
-      Cards.push(
-        <Card
-          key={i + 5}
-          id={i + 5}
-          title={requests[i].reason}
-          text={requests[i].how}
-          date={requests[i].startDate}
-          doAction={this.goRequestDet}
-        />
-      )
+    for(let i = 0; i < requests.length; i++){
+      var pushTo = false;
+      switch (i) {
+        case 0:
+          if(this.state.checkedJs){
+            pushTo = true;
+          }
+          break;
+        case 1:
+          if(this.state.checkedRf){
+            pushTo = true;
+          }
+          break;
+        case 2:
+          if(this.state.checkedCar){
+            pushTo = true;
+          }
+          break;
+        case 4:
+          if(this.state.checkedSo){
+            pushTo = true;
+          }
+          break;
+        case 5:
+        if(this.state.checkedMaw){
+          pushTo = true;
+        }
+        break;
+        default:
+
+      }
+      if(pushTo){
+        Cards.push(
+          <Card
+            key={i}
+            id={i}
+            title={needs[i].reason}
+            text={needs[i].how}
+            date={needs[i].startDate}
+            doAction={this.goRequestDet}
+          />
+        ),
+        Cards.push(
+          <Card
+            key={i + 5}
+            id={i + 5}
+            title={requests[i].reason}
+            text={requests[i].how}
+            date={requests[i].startDate}
+            doAction={this.goRequestDet}
+          />
+        )
+      }
     }
 
     return (
@@ -76,11 +159,35 @@ export default class HomeScreen extends React.Component {
             openDrawer={this.openDrawer}
             title="Home"
           />
+          <Modal
+            animationType="slide"
+            transparent={false}
+            isVisible={this.state.isModalVisible}>
+            <View style={{marginTop: 22, alignItems: 'center', padding:30}}>
+                <Text style={{color: '#FFFFFF', marginTop: 10, textAlign: 'center', fontSize: 25, fontWeight: '700'}}>Filter By:</Text>
+                <CheckBox title='Caritas' checked={this.state.checkedCar} onPress={() => this.setState({checkedCar: !this.state.checkedCar})}/>
+                <CheckBox title='Make a Wish Foundation' checked={this.state.checkedMaw} onPress={() => this.setState({checkedMaw: !this.state.checkedMaw})}/>
+                <CheckBox title='Richmond Foundation' checked={this.state.checkedRf} onPress={() => this.setState({checkedRf: !this.state.checkedRf})}/>
+                <CheckBox title='St. Jeanne Antide Foundation' checked={this.state.checkedJs} onPress={() => this.setState({checkedJs: !this.state.checkedJs})}/>
+                <CheckBox title='SOS Malta' checked={this.state.checkedSo} onPress={() => this.setState({checkedSo: !this.state.checkedSo})}/>
+                <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModal}><Text> Submit </Text></Button>
+                <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._resetForm}><Text> Reset </Text></Button>
+            </View>
+          </Modal>
           <Content>
             {Cards}
           </Content>
         </Drawer>
+
+        <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModal}><Text> Filter </Text></Button>
       </Container>
     );
   }
+}
+
+CardComponent.defaultProps = {
+  title:"Card Title",
+  date:"--",
+  text:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+  doAction:()=>{}
 }
