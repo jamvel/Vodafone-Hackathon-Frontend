@@ -80,6 +80,9 @@ export default class NGOProfile extends Component {
                         <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
                           <Text>Donate Time</Text>
                         </TouchableOpacity>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                          <Text>Donate Money</Text>
+                        </TouchableOpacity>
                         <Modal
                           animationType="slide"
                           transparent={false}
