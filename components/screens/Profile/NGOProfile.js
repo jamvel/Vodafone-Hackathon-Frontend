@@ -61,7 +61,7 @@ export default class NGOProfile extends Component {
     var category = "";
     data[this.props.id].category.forEach(function(cat){(category == "")? category = cat : category = category + " || " + cat;});
     const address = "Address: " + data[this.props.id].address;
-    const contact = "Mobile: " + data[this.props.id].contact;
+    const contact = "Contact Number: " + data[this.props.id].contact;
     const email = "Email: " + data[this.props.id].email;
 
     errorFound = (this.props.id > data.length)? true: false;
@@ -165,7 +165,8 @@ const styles = StyleSheet.create({
     fontSize:16,
     color: "#00BFFF",
     marginTop:10,
-    textAlign: 'left'
+    textAlign: 'left',
+    fontWeight:'600'
   },
   description:{
     fontSize:16,

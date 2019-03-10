@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
   info:{
     fontSize:16,
     color: "#00BFFF",
-    marginTop:10
+    marginTop:10,
+    fontWeight:'600'
   },
   description:{
     fontSize:16,

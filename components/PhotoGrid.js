@@ -11,30 +11,30 @@ export default class PhotoGrid extends React.Component {
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Ribbons/goldBadge.png")} />
             <View style={styles.overlay} />
-            <Text> Achieved at 20 hours of Community Work </Text>
+            <Text>Achieved at 20 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Ribbons/silverBadge.png")} />
             <View style={styles.overlay} />
-            <Text> Achieved at 10 hours of Community Work </Text>
+            <Text>Achieved at 10 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Ribbons/bronzeBadge.png")} />
-            <Text> Achieved at 5 hours of Community Work </Text>
+            <Text>Achieved at 5 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Shields/goldShield1.png")} />
             <View style={styles.overlay} />
-            <Text> Achieved after donating 200 Euros </Text>
+            <Text>Achieved after donating 200 Euros </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Shields/silverShield1.png")} />
             <View style={styles.overlay} />
-            <Text> Achieved after donating 100 Euros </Text>
+            <Text>Achieved after donating 100 Euros </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Shields/bronzeShield1.png")} />
-            <Text> Achieved after donating 50 Euros </Text>
+            <Text>Achieved after donating 50 Euros </Text>
           </View>
         </View>
     );
