@@ -16,6 +16,8 @@ import Profile from "./components/screens/Profile/Profile.js";
 import PeopleInvested from "./components/screens/PeopleInvested.js";
 import Error from "./components/screens/Error.js";
 import Project from "./components/screens/Project/Project.js";
+import Badges from "./components/screens/Badges.js";
+import Trophies from "./components/screens/Trophies.js";
 
 
 export default class AppContainer extends Component {
@@ -65,6 +67,8 @@ export default class AppContainer extends Component {
           <Scene key="CompanyPages" component={CompanyPages} />
           <Scene key="CompanyProfile" component={CompanyProfile} />
           <Scene key="Project" component={Project} />
+          <Scene key="Badges" component={Badges} />
+          <Scene key="Trophies" component={Trophies} />
         </Scene>
       </Router>
     );

@@ -9,32 +9,32 @@ export default class PhotoGrid extends React.Component {
     return (
         <View style = {styles.photoGrid}>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Ribbons/goldBadge.png")} />
+            <Image style={styles.photo} source={require("../assets/Badges/Ribbons/goldBadge.png")} />
             <View style={styles.overlay} />
-            <Text> 15 more hours of Community Work to get badge </Text>
+            <Text> Achieved at 20 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Ribbons/silverBadge.png")} />
+            <Image style={styles.photo} source={require("../assets/Badges/Ribbons/silverBadge.png")} />
             <View style={styles.overlay} />
-            <Text> 5 more hours of Community Work to get badge </Text>
+            <Text> Achieved at 10 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Ribbons/bronzeBadge.png")} />
             <Text> Achieved at 5 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Shields/goldShield1.png")} />
+            <Image style={styles.photo} source={require("../assets/Badges/Shields/goldShield1.png")} />
             <View style={styles.overlay} />
-            <Text> 16.65 more investments to get shield </Text>
+            <Text> Achieved after donating 200 Euros </Text>
           </View>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Shields/silverShield1.png")} />
+            <Image style={styles.photo} source={require("../assets/Badges/Shields/silverShield1.png")} />
             <View style={styles.overlay} />
-            <Text> 6.65 more investments to get shield </Text>
+            <Text> Achieved after donating 100 Euros </Text>
           </View>
           <View style = {styles.photoWrap}>
-            <Image style={styles.photoUnachieved} source={require("../assets/Badges/Shields/bronzeShield1.png")} />
-            <Text> 1.65 more investments to get shield </Text>
+            <Image style={styles.photo} source={require("../assets/Badges/Shields/bronzeShield1.png")} />
+            <Text> Achieved after donating 50 Euros </Text>
           </View>
         </View>
     );

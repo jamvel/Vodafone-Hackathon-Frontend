@@ -28,6 +28,12 @@ export default class SideBar extends React.Component {
             <ListItem button onPress={() => Actions.CompanyPages()}>
               <Text>Companies Involved</Text>
             </ListItem>
+            <ListItem button onPress={() => Actions.Badges()}>
+              <Text>All Possible Badges - User</Text>
+            </ListItem>
+            <ListItem button onPress={() => Actions.Trophies()}>
+              <Text>All Possible Trophies - Company</Text>
+            </ListItem>
             <ListItem button onPress={() => Actions.Login()}>
               <Text>Log Out</Text>
             </ListItem>
