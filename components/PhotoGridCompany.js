@@ -11,16 +11,16 @@ export default class PhotoGridCompany extends React.Component {
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Trophies/goldTrophy.png")} />
             <View style={styles.overlay} />
-            <Text>Achieved at 2000 hours of Community Work </Text>
+            <Text>Achieved after 2000 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Trophies/silverTrophy.png")} />
             <View style={styles.overlay} />
-            <Text>Achieved at 1000 hours of Community Work </Text>
+            <Text>Achieved after 1000 hours of Community Work </Text>
           </View>
           <View style = {styles.photoWrap}>
             <Image style={styles.photo} source={require("../assets/Badges/Trophies/bronzeTrophy.png")} />
-            <Text>Achieved at 500 hours of Community Work </Text>
+            <Text>Achieved after 500 hours of Community Work </Text>
           </View>
         </View>
     );
