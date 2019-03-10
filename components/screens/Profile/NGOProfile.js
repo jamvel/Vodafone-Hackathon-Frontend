@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import {  Container, Content, StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, List, ListItem, TextInput, AppRegistry, Dimensions} from 'react-native';
-import {  Icon } from "native-base";
+import { Button, Icon } from "native-base";
 import Modal from "react-native-modal";
 import DatePicker from 'react-native-datepicker';
 import { Actions } from 'react-native-router-flux';
@@ -81,19 +81,15 @@ export default class NGOProfile extends Component {
                         <Text style={styles.description}>{address}</Text>
                         <Text style={styles.description}>{contact}</Text>
                         <Text style={styles.description}>{email}</Text>
-                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalTime}>
-                          <Text>Donate Time</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalMoney}>
-                          <Text>Donate Money</Text>
-                        </TouchableOpacity>
+                        <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModalTime}><Text style={{color: 'white'}}> Donate Time </Text></Button>
+                        <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModalMoney}><Text style={{color: 'white'}}> Donate Money </Text></Button>
                         <Modal
                           animationType="slide"
                           transparent={false}
                           isVisible={this.state.isModalVisibleTime}>
                           <View style={{marginTop: 22, alignItems: 'center', padding:30}}>
-                            <Text style={styles.title}>Donate Time</Text>
-                            <TextInput icon="icon-clock" placeholder="Amount in Hours" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
+                            <Text style={styles.title}>Donate Time <Icon name='clock' style={{marginRight:5,color:"#3498db",fontSize:34}}/></Text>
+                            <TextInput icon="clock" placeholder="Amount in Hours" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
                             <DatePicker style={{width: 200}} date={this.state.date} mode="date" placeholder="select date" format="YYYY-MM-DD"
                                 minDate={this.state.date} maxDate="2050-12-31" confirmBtnText="Confirm" cancelBtnText="Cancel"
                                 customStyles={{
@@ -109,12 +105,8 @@ export default class NGOProfile extends Component {
                                 }}
                                 onDateChange={(date) => {this.setState({date: date})}}
                               />
-                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalTime}>
-                              <Text>Submit</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalTime}>
-                              <Text>Cancel</Text>
-                            </TouchableOpacity>
+                            <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModalTime}><Text style={{color: 'white'}}> Submit </Text></Button>
+                            <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModalTime}><Text style={{color: 'white'}}> Cancel </Text></Button>
                           </View>
                         </Modal>
                         <Modal
@@ -124,19 +116,12 @@ export default class NGOProfile extends Component {
                           <View style={{marginTop: 22, alignItems: 'center', padding:30}}>
                             <Text style={styles.title}>Donate Money</Text>
                             <TextInput icon="icon-clock" placeholder="Amount in Euro" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
-                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalMoney}>
-                              <Text>Submit</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalMoney}>
-                              <Text>Cancel</Text>
-                            </TouchableOpacity>
+                            <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModalMoney}><Text style={{color: 'white'}}> Submit </Text></Button>
+                            <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={this._toggleModalMoney}><Text style={{color: 'white'}}> Cancel </Text></Button>
                           </View>
                         </Modal>
 
-
-                        <TouchableOpacity style={styles.buttonContainer} onPress={() => Actions.HomeScreen({id:data[this.props.id].id})}>
-                          <Text>Active Requests</Text>
-                        </TouchableOpacity>
+                        <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={() => Actions.HomeScreen({id:data[this.props.id].id})}><Text style={{color: 'white'}}> Active Requests </Text></Button>
                       </View>
                   </View>
                 </View>

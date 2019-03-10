@@ -5,7 +5,7 @@ import Overlay from 'react-native-modal-overlay';
 import Sidebar from '../../Sidebar';
 import ProjectContent from './ProjectContent.js';
 
-export default class HomeScreen extends React.Component {
+export default class Project extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -54,13 +54,14 @@ export default class HomeScreen extends React.Component {
         onClose={() => this.closeDrawer()} >
           <Header
             openDrawer={this.openDrawer}
+            title=""
           />
 
           <Overlay
             visible={this.state.modalVisible}
             onClose={this.closeOverlay}
             animationType="zoomIn"
-            containerStyle={{backgroundColor:'rgba(51, 152, 219, 0.7)'}}
+            containerStyle={{backgroundColor:'rgba(51, 152, 219, 0.95)'}}
             childrenWrapperStyle={{backgroundColor: '#fff',borderRadius:10}}
             animationDuration={400}
             closeOnTouchOutside

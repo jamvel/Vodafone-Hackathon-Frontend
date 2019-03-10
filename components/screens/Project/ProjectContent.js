@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Grid, Text, Card, CardItem, Content, Body, StyleSheet} from "native-base";
+import { Container, Grid, Text, Card, CardItem, Content, Body, StyleSheet, Icon, Button} from "native-base";
 import { View, ScrollView } from "react-native";
 import Timeline from 'react-native-timeline-listview';
+import NumericInput from 'react-native-numeric-input';
 import PropTypes from 'prop-types';
 import Speedometer from 'react-native-speedometer-chart';
 
@@ -18,8 +19,7 @@ export default ProjectContent = (props) => (
           </Body>
         </CardItem>
       </Card>
-      <Speedometer internalColor='#2c9cdb' value={props.current} totalValue={props.target}/>
-      <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>Our Journey</Text>
+      <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>Our Journey <Icon name='book' style={{marginRight:7,color:"#3498db",fontSize:36}}/></Text>
         <Timeline
           data={props.data[props.id]}
           circleSize={30}
@@ -42,7 +42,54 @@ export default ProjectContent = (props) => (
             }
           }}
         />
+        <Card style={{marginTop:15}}>
+          <CardItem header>
+            <Text style={{fontSize:32,textAlign:"center",fontWeight:"bold"}}>Total Progress</Text>
+          </CardItem>
+          <CardItem>
+            <Body>
+              <View style={{width:"100%",flex:1,justifyContent:'center',alignItems:'center',marginTop:15}}>
+                <Speedometer internalColor='#2c9cdb' value={props.current} totalValue={props.target} showIndicator />
+              </View>
+            </Body>
+          </CardItem>
+        </Card>
+      <Card style={{marginTop:15}}>
+        <CardItem header>
+          <Text style={{fontSize:32,textAlign:"center",fontWeight:"bold"}}>Donate <Icon name='flame' style={{marginRight:5,color:"#3498db",fontSize:34}}/></Text>
+        </CardItem>
+        <CardItem>
+          <Body>
+            <Text>
+              WhyDonate..
+              NativeBase is a free and open source framework that enable
+              developers to build
+              high-quality mobile apps using React Native iOS and Android
+              apps
+              with a fusion of ES6.
+            </Text>
+            <View style={{width:"100%",flex:1,justifyContent:'center',alignItems:'center',marginTop:15}}>
+              <NumericInput
+                onChange={value => {}}
+                minValue={0}
+                totalWidth={300}
+                totalHeight={50}
+                iconSize={30}
+                step={1}
+                valueType='integer'
+                rounded
+                textColor='grey'
+                iconStyle={{ color: 'white' }}
+                rightButtonBackgroundColor='#3498db'
+                leftButtonBackgroundColor='#879dc1'
+                style={{justifyContent:'center',alignItems:'center'}}
+                />
+              <Button primary block style={{marginTop:15,borderRadius:10,height:60}}><Text> Make my donation ! </Text></Button>
+            </View>
 
+          </Body>
+        </CardItem>
+      </Card>
     </Content>
 </ScrollView>
 );
@@ -58,7 +105,8 @@ ProjectContent.defaultProps = {
                "Our child has been suffering from ABC syndrome for the past year. His condition has drained our funds but we refuse to give up on him. The trip to London may be a life changing moment for us all and therefore we need your help in paying the expenses",
                "I just got out of prison and have started a new life. However, I am homeless and need help getting on my feet. Kindly help me find an apartment from where I can get my life back on track.",
                "Buy the required medicine which would keeping me going in my battle against XYZ",
-               "Throughout my early days I was addicted to gambling and consequently lost most of my life earnings. I need a small financial sponsorship to pay off some outstanding loans and get back on my feet."],
+               "Throughout my early days I was addicted to gambling and consequently lost most of my life earnings. I need a small financial sponsorship to pay off some outstanding loans and get back on my feet.",
+               "Back in 2016 we had an accident where my entire house, along with my belongings burned to the gorund. Unfortunately, I was not insured and lost everything in the fire. I have been living on the streets for the past 2 months and would like to get back to the life I used to live"],
   data:[[
     {title: 'Help with social care', description: 'You would be assisting Dr. Josephine Muscat throughout her visits',extraInfo:"Carer degree is ideal"},
     {title: 'Help with cleaning and food preparation', description: 'We would clean our appartments and cook for all our residents',extraInfo:"No particular skill is required"}
@@ -99,8 +147,15 @@ ProjectContent.defaultProps = {
   ], [
     {"title": "Starting Point", "description": "Currently I am in dier need of some money to pay off this month's credit","extraInfo":"Euros 200"},
     {"title": "Pay Debtors", "description": "Once debtors are paid I will be free from my past","extraInfo":"Thank you for giving me a second chance at life!"}
+  ],[
+    {"title": "Find an appartment", "description": "Currently I am living on the streets and would like to find somewhere to live in order to clean myself up.","extraInfo":"Euros 200"},
+    {"title": "Find a job", "description": "Apart from my apartment I also lost my job since I wasn't able to perform like I used to after the incident","extraInfo":"I am skilled and highly motivated"},
+    {"title": "Become independent again", "description": "My goal is to once more become the independent man I used to be","extraInfo":"-"},
+    {"title": "[Blog Post]", "description": "I would like to thank all of you who believed in me and invested their time and money to get me a little appartment and a steady job. I would like you to know that I am back on my feet and looking forward to life's new challenges","extraInfo":"Thank You!"}
   ]],
   overlayShown:false,
+  target:100,
+  current:100,
   toggleOverlay:()=>{},
   updateOverlayContent: ()=>{}
 }

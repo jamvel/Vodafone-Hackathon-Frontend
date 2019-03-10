@@ -55,6 +55,7 @@ export default class NGOPages extends React.Component {
         onClose={() => this.closeDrawer()} >
           <Header
             openDrawer={this.openDrawer}
+            title="Companies"
           />
           <Content>
             {Cards}

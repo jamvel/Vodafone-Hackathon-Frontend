@@ -157,6 +157,7 @@ export default class HomeScreen extends React.Component {
         onClose={() => this.closeDrawer()} >
           <Header
             openDrawer={this.openDrawer}
+            title="Home"
           />
           <Modal
             animationType="slide"

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, Image, StatusBar, View, StyleSheet,  Text,  TouchableOpacity, ScrollView} from 'react-native';
-import { Container, Content, List, ListItem } from "native-base";
+import { Container, Content, List, ListItem, Button } from "native-base";
 import { Actions } from 'react-native-router-flux';
 
 import PhotoGrid from '../../PhotoGrid.js';
@@ -32,13 +32,9 @@ export default class Profile extends Component {
               </View>
             </View>
         </View>
+        <Button primary block style={{margin:10,borderRadius:10,height:50}} onPress={() => Actions.PeopleInvested()}><Text style={{color: 'white'}}> Projects invested in </Text></Button>
       </View>
-          <List>
-            <ListItem button onPress={() => Actions.PeopleInvested()}>
-              <Text>Projects invested in</Text>
-            </ListItem>
-          </List>
-        </ScrollView>
+    </ScrollView>
     );
   }
 }
