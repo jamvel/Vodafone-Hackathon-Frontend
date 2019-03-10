@@ -15,6 +15,8 @@ import CompanyProfile from "./components/screens/Profile/CompanyProfile.js";
 import Profile from "./components/screens/Profile/Profile.js";
 import PeopleInvested from "./components/screens/PeopleInvested.js";
 import Error from "./components/screens/Error.js";
+import Project from "./components/screens/Project/Project.js";
+
 
 export default class AppContainer extends Component {
   constructor() {
@@ -62,6 +64,7 @@ export default class AppContainer extends Component {
           <Scene key="Error" component={Error} />
           <Scene key="CompanyPages" component={CompanyPages} />
           <Scene key="CompanyProfile" component={CompanyProfile} />
+          <Scene key="Project" component={Project} />
         </Scene>
       </Router>
     );

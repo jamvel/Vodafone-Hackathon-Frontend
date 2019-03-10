@@ -21,8 +21,8 @@ export default class HomeScreen extends React.Component {
       this.drawer._root.open()
     };
 
-    goRequestDet = (ngoID) => {
-      Actions.NGOProfile({id:ngoID});
+    goRequestDet = (reqID) => {
+      Actions.Project({id:reqID});
     }
 
   render() {

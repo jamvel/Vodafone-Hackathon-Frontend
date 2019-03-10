@@ -1,8 +1,20 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, Image, Text } from 'react-native';
+import { StyleSheet, View, Image, Text, BackHandler } from 'react-native';
 import LoginForm from './LoginForm'
 
 export default class Login extends Component{
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  handleBackButton() {
+    return true;
+  }
+
   render(){
     return(
 		<View

@@ -1,6 +1,11 @@
+//Alert.alert("Thank You!", "Thank you for donating some of your time.",
+//[{text: 'Cancel'},{text: 'OK'}], {cancelable: false})
+
 import React, { Component } from 'react';
-import {  Container, Content, StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, List, ListItem, TextInput, AppRegistry} from 'react-native';
-import DatePicker from 'react-native-datepicker'
+import {  Container, Content, StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, List, ListItem, TextInput, AppRegistry, Dimensions} from 'react-native';
+import {  Icon } from "native-base";
+import Modal from "react-native-modal";
+import DatePicker from 'react-native-datepicker';
 import { Actions } from 'react-native-router-flux';
 
 
@@ -41,6 +46,12 @@ export default class NGOProfile extends Component {
     }
   }
 
+  state = {
+    isModalVisible: false,
+  }
+
+  _toggleModal = () =>
+     this.setState({ isModalVisible: !this.state.isModalVisible });
 
   render() {
     var category = "";
@@ -48,7 +59,6 @@ export default class NGOProfile extends Component {
     const address = "Address: " + data[this.props.id].address;
     const contact = "Mobile: " + data[this.props.id].contact;
     const email = "Email: " + data[this.props.id].email;
-
 
     errorFound = (this.props.id > data.length)? true: false;
     if(errorFound){
@@ -67,51 +77,45 @@ export default class NGOProfile extends Component {
                         <Text style={styles.description}>{address}</Text>
                         <Text style={styles.description}>{contact}</Text>
                         <Text style={styles.description}>{email}</Text>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                          <Text>Donate Time</Text>
+                        </TouchableOpacity>
+                        <Modal
+                          animationType="slide"
+                          transparent={false}
+                          isVisible={this.state.isModalVisible}>
+                          <View style={{marginTop: 22, alignItems: 'center', padding:30}}>
+                            <Text style={styles.title}>Donate Time</Text>
+                            <TextInput icon="icon-clock" placeholder="amount in hours" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
+                            <DatePicker style={{width: 200}} date={this.state.date} mode="date" placeholder="select date" format="YYYY-MM-DD"
+                                minDate={this.state.date} maxDate="2050-12-31" confirmBtnText="Confirm" cancelBtnText="Cancel"
+                                customStyles={{
+                                  dateIcon: {
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 4,
+                                    marginLeft: 0
+                                  },
+                                  dateInput: {
+                                    marginLeft: 36
+                                  }
+                                }}
+                                onDateChange={(date) => {this.setState({date: date})}}
+                              />
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                              <Text>Submit</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                              <Text>Cancel</Text>
+                            </TouchableOpacity>
+                          </View>
+                        </Modal>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={() => Actions.HomeScreen(data[this.props.id].id)}>
+                          <Text>Active Requests</Text>
+                        </TouchableOpacity>
                       </View>
                   </View>
                 </View>
-
-                <Text style={styles.title}>Active Requests</Text>
-
-
-
-                <Text style={styles.title}>Donate Time</Text>
-                <TextInput
-                placeholder="amount in hours"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-                returnKeyType="next"
-                keyboardType="numeric"
-
-                style={styles.input}
-                />
-                <DatePicker
-                        style={{width: 200}}
-                        date={this.state.date}
-                        mode="date"
-                        placeholder="select date"
-                        format="YYYY-MM-DD"
-                        minDate={this.state.date}
-                        maxDate="2050-12-31"
-                        confirmBtnText="Confirm"
-                        cancelBtnText="Cancel"
-                        customStyles={{
-                          dateIcon: {
-                            position: 'absolute',
-                            left: 0,
-                            top: 4,
-                            marginLeft: 0
-                          },
-                          dateInput: {
-                            marginLeft: 36
-                          }
-                          // ... You can check the source to find the other keys.
-                        }}
-                        onDateChange={(date) => {this.setState({date: date})}}
-                      />
-
-                <TouchableOpacity style={styles.buttonContainer}>
-                  <Text>Submit</Text>
-                </TouchableOpacity>
             </ScrollView>
          </View>
     );
@@ -177,5 +181,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
     fontWeight: '700'
+  },
+  input:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor:'#FFFFFF',
+    borderWidth: 1,
+    margin: 5,
+    height: 40,
+    width: (Dimensions.get('window').width / 2) - 4
   }
 });
