@@ -75,6 +75,8 @@ export default class HomeScreen extends React.Component {
               toggleOverlay={this.toggleOverlay}
               overlayShown={this.state.modalVisible}
               updateOverlayContent={this.updateOverlayContent}
+              target={this.props.target}
+              current={this.props.current}
             />
           </Content>
 

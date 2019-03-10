@@ -47,11 +47,15 @@ export default class NGOProfile extends Component {
   }
 
   state = {
-    isModalVisible: false,
+    isModalVisibleTime: false,
+    isModalVisibleMoney: false,
   }
 
-  _toggleModal = () =>
-     this.setState({ isModalVisible: !this.state.isModalVisible });
+  _toggleModalTime = () =>
+     this.setState({ isModalVisibleTime: !this.state.isModalVisibleTime });
+
+   _toggleModalMoney = () =>
+      this.setState({ isModalVisibleMoney: !this.state.isModalVisibleMoney });
 
   render() {
     var category = "";
@@ -77,19 +81,19 @@ export default class NGOProfile extends Component {
                         <Text style={styles.description}>{address}</Text>
                         <Text style={styles.description}>{contact}</Text>
                         <Text style={styles.description}>{email}</Text>
-                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalTime}>
                           <Text>Donate Time</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                        <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalMoney}>
                           <Text>Donate Money</Text>
                         </TouchableOpacity>
                         <Modal
                           animationType="slide"
                           transparent={false}
-                          isVisible={this.state.isModalVisible}>
+                          isVisible={this.state.isModalVisibleTime}>
                           <View style={{marginTop: 22, alignItems: 'center', padding:30}}>
                             <Text style={styles.title}>Donate Time</Text>
-                            <TextInput icon="icon-clock" placeholder="amount in hours" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
+                            <TextInput icon="icon-clock" placeholder="Amount in Hours" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
                             <DatePicker style={{width: 200}} date={this.state.date} mode="date" placeholder="select date" format="YYYY-MM-DD"
                                 minDate={this.state.date} maxDate="2050-12-31" confirmBtnText="Confirm" cancelBtnText="Cancel"
                                 customStyles={{
@@ -105,15 +109,32 @@ export default class NGOProfile extends Component {
                                 }}
                                 onDateChange={(date) => {this.setState({date: date})}}
                               />
-                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalTime}>
                               <Text>Submit</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModal}>
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalTime}>
                               <Text>Cancel</Text>
                             </TouchableOpacity>
                           </View>
                         </Modal>
-                        <TouchableOpacity style={styles.buttonContainer} onPress={() => Actions.HomeScreen(data[this.props.id].id)}>
+                        <Modal
+                          animationType="slide"
+                          transparent={false}
+                          isVisible={this.state.isModalVisibleMoney}>
+                          <View style={{marginTop: 22, alignItems: 'center', padding:30}}>
+                            <Text style={styles.title}>Donate Money</Text>
+                            <TextInput icon="icon-clock" placeholder="Amount in Euro" placeholderTextColor="rgba(255,255,255,0.7)" returnKeyType="next" keyboardType="numeric" style={styles.input}/>
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalMoney}>
+                              <Text>Submit</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buttonContainer} onPress={this._toggleModalMoney}>
+                              <Text>Cancel</Text>
+                            </TouchableOpacity>
+                          </View>
+                        </Modal>
+
+
+                        <TouchableOpacity style={styles.buttonContainer} onPress={() => Actions.HomeScreen({id:data[this.props.id].id})}>
                           <Text>Active Requests</Text>
                         </TouchableOpacity>
                       </View>

@@ -10,8 +10,8 @@ const data = {"id":5, "company": 0, "companyName": "Vodafone", "name":"Luke", "s
 export default class Profile extends Component {
   render() {
     const fullName = data.name + " " + data.surname;
-    const funds = "Money Invested: #" + data.fund;
-    const timeSpent = "Time Invested: " + data.hours + " hours";
+    const funds = "Money Invested: Euro " + data.fund;
+    const timeSpent = "Time Invested: " + data.hours + " Hours";
     const companyName = data.companyName;
     const companyID = data.company;
     return (

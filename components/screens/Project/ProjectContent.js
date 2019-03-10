@@ -3,6 +3,7 @@ import { Container, Grid, Text, Card, CardItem, Content, Body, StyleSheet} from 
 import { View, ScrollView } from "react-native";
 import Timeline from 'react-native-timeline-listview';
 import PropTypes from 'prop-types';
+import Speedometer from 'react-native-speedometer-chart';
 
 export default ProjectContent = (props) => (
   <ScrollView>
@@ -13,12 +14,11 @@ export default ProjectContent = (props) => (
         </CardItem>
         <CardItem bordered>
           <Body>
-            <Text>
-              {props.description[props.id]}
-            </Text>
+            <Text>{props.description[props.id]}</Text>
           </Body>
         </CardItem>
       </Card>
+      <Speedometer internalColor='#2c9cdb' value={props.current} totalValue={props.target}/>
       <Text style={{fontSize:32,fontWeight:"bold",marginLeft:10,marginTop:10}}>Our Journey</Text>
         <Timeline
           data={props.data[props.id]}
