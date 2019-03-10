@@ -58,7 +58,8 @@ ProjectContent.defaultProps = {
                "Our child has been suffering from ABC syndrome for the past year. His condition has drained our funds but we refuse to give up on him. The trip to London may be a life changing moment for us all and therefore we need your help in paying the expenses",
                "I just got out of prison and have started a new life. However, I am homeless and need help getting on my feet. Kindly help me find an apartment from where I can get my life back on track.",
                "Buy the required medicine which would keeping me going in my battle against XYZ",
-               "Throughout my early days I was addicted to gambling and consequently lost most of my life earnings. I need a small financial sponsorship to pay off some outstanding loans and get back on my feet."],
+               "Throughout my early days I was addicted to gambling and consequently lost most of my life earnings. I need a small financial sponsorship to pay off some outstanding loans and get back on my feet.",
+               "Back in 2016 we had an accident where my entire house, along with my belongings burned to the gorund. Unfortunately, I was not insured and lost everything in the fire. I have been living on the streets for the past 2 months and would like to get back to the life I used to live"],
   data:[[
     {title: 'Help with social care', description: 'You would be assisting Dr. Josephine Muscat throughout her visits',extraInfo:"Carer degree is ideal"},
     {title: 'Help with cleaning and food preparation', description: 'We would clean our appartments and cook for all our residents',extraInfo:"No particular skill is required"}
@@ -99,6 +100,11 @@ ProjectContent.defaultProps = {
   ], [
     {"title": "Starting Point", "description": "Currently I am in dier need of some money to pay off this month's credit","extraInfo":"Euros 200"},
     {"title": "Pay Debtors", "description": "Once debtors are paid I will be free from my past","extraInfo":"Thank you for giving me a second chance at life!"}
+  ],[
+    {"title": "Find an appartment", "description": "Currently I am living on the streets and would like to find somewhere to live in order to clean myself up.","extraInfo":"Euros 200"},
+    {"title": "Find a job", "description": "Apart from my apartment I also lost my job since I wasn't able to perform like I used to after the incident","extraInfo":"I am skilled and highly motivated"},
+    {"title": "Become independent again", "description": "My goal is to once more become the independent man I used to be","extraInfo":"-"},
+    {"title": "[Blog Post]", "description": "I would like to thank all of you who believed in me and invested their time and money to get me a little appartment and a steady job. I would like you to know that I am back on my feet and looking forward to life's new challenges","extraInfo":"Thank You!"}
   ]],
   overlayShown:false,
   toggleOverlay:()=>{},

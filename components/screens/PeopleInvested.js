@@ -10,7 +10,7 @@ const needs = [
 ];
 
 const requests = [
-  {"nId":1, "reqId":4, "target":5, "current":2, "reason": "New Wheelchair","how":"For the past two months I have been bedridden due to an unfortunate work place accident and need funds for an electronic Wheelchair", "startDate":"2019-02-25", "endDate":"2019-04-27", "hide":false},
+  {"nId":1, "reqId":4, "target":5, "current":2, "reason": "Rent a flat to get off the streets","how":"Due to a domestic accident I lost my house and all of my possessions. I have been homeless for the past 2 months and wish to reintegrate myself within the community", "startDate":"2017-02-25", "endDate":"2019-04-27", "hide":false},
 ];
 
 export default class PeopleInvested extends React.Component {
@@ -49,7 +49,7 @@ export default class PeopleInvested extends React.Component {
       Cards.push(
         <Card
           key={i+1}
-          id={5}
+          id={10}
           title={requests[i].reason}
           text={requests[i].how}
           date={requests[i].startDate}
