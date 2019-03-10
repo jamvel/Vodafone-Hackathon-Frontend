@@ -7,11 +7,11 @@
     {"id":5, "name":"SOS Malta", "website":"http://www.sosmalta.org/" , "address":"10, Triq il-Ward, Santa Venera, SVR 1640", "contact":21244123, "email":"info@sosmalta.org ","category":["Solidarity"], "img":"SOS.png"}
   ],
   "Companies":[
-    {"id":1, "name":"Vodafone", "address":"Malta International Airport (Arrivals), Ħal Luqa LQA 4000", "contact":99999247, "email":"info@vodafone.com", "employeeHours":200, "startDate":"2018-04-25T18:25:43.511Z", "img":"Vodafone.png"},
-		{"id":2, "name":"Office of the Prime Minister", "address":"Auberge de Castille", "contact":99999247, "email":"info@opm.com", "employeeHours":50, "startDate":"2018-06-24T18:15:43.511Z", "img":"OPM.png"},
-    {"id":3, "name":"The Malta Police Force", "address":"The Malta Police Force, Police General Headquarters, Pjazza San Kalcidonju, Floriana FRN 1530", "contact":21224001, "email":"pulizija@gov.mt", "employeeHours":37, "startDate":"2018-02-24T18:25:43.511Z", "img":"Police.png"},
-    {"id":4, "name":"Civil Protection Department Malta", "address":"Ministry for Home Affairs and National Security, 201, Strait Street, Valletta VLT 1433", "contact":25689000, "email":"homeaffairs@gov.mt", "employeeHours":157, "startDate":"2018-01-10T20:20:40.511Z", "img":"CPD.png"},
-    {"id":5, "name":"University Of Malta", "address":"University of Malta, Msida MSD 2080, Malta", "contact":23402340, "email":"info@um.edu.mt", "employeeHours":30, "startDate":"2018-03-12T08:25:53.511Z", "img":"UOM.png"}
+    {"id":1, "name":"Vodafone", "address":"Malta International Airport (Arrivals), Ħal Luqa LQA 4000", "sponsorScheme":"With every Red Plan we will add E3 to your balance", "contact":99999247, "email":"info@vodafone.com", "employeeHours":200, "startDate":"2018-04-25", "img":"Vodafone.png"},
+		{"id":2, "name":"Office of the Prime Minister", "address":"Auberge de Castille", "sponsorScheme":"E1 tax rebate to your balance", "contact":99999247, "email":"info@opm.com", "employeeHours":50, "startDate":"2018-06-24", "img":"OPM.png"},
+    {"id":3, "name":"The Malta Police Force", "address":"The Malta Police Force, Police General Headquarters, Pjazza San Kalcidonju, Floriana FRN 1530", "sponsorScheme":"-", "contact":21224001, "email":"pulizija@gov.mt", "employeeHours":37, "startDate":"2018-02-24", "img":"Police.png"},
+    {"id":4, "name":"Civil Protection Department Malta", "address":"Ministry for Home Affairs and National Security, 201, Strait Street, Valletta VLT 1433", "sponsorScheme":"-", "contact":25689000, "email":"homeaffairs@gov.mt", "employeeHours":157, "startDate":"2018-01-10", "img":"CPD.png"},
+    {"id":5, "name":"University Of Malta", "address":"University of Malta, Msida MSD 2080, Malta", "sponsorScheme":"E2 in your balance for teaching during Extra Curricular activities", "contact":23402340, "email":"info@um.edu.mt", "employeeHours":30, "startDate":"2018-03-12", "img":"UOM.png"}
   ],
   "Receiver":[
     {"id":1, "ngo": 4, "ngoName":"St. Jeanne Antide Foundation", "name":"John", "surname":"Borg", "description":"During my teenage years my mum abandoned me and my siblings. I had to take care of my family instead of going to school.", "idNum":"15396M", "mob":99887766, "img":"male1.png"},
@@ -28,24 +28,42 @@
     {"id":5, "company": 1, "companyName": "Vodafone", "name":"Luke", "surname":"Abela", "idNum":"96232M", "fund":58,  "hours":15, "img":"female1.png"}
   ],
   "Needs":[
-    {"nId":1, "ngoId":4, "target":5, "current":2, "reason": "Pay Workers","how":"How 1", "startDate":"2019-04-24T14:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z"},
-    {"nId":2, "ngoId":3, "target":600, "current":200, "reason": "Buy new van","how":"How 2", "startDate":"2019-05-25T16:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z"},
-    {"nId":3, "ngoId":1, "target":20, "current":20, "reason": "Feed residents","how":"How 3", "startDate":"2019-06-26T17:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z"},
-    {"nId":4, "ngoId":5, "target":30, "current":2, "reason": "Get more carers","how":"How 4", "startDate":"2019-07-27T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z"},
-    {"nId":5, "ngoId":2, "target":70, "current":20, "reason": "Fix structural damage to building","how":"How 5", "startDate":"2019-08-28T19:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z"}
+    {"nId":1, "ngoId":4, "target":5, "current":2, "reason": "Social Workers","how":"Due to several unforseen expenses we have fallen behind in paying wages and consequently we don't have any social workers and need individuals to help out", "startDate":"2019-02-24", "endDate":"2019-04-27"},
+    {"nId":2, "ngoId":3, "target":600, "current":200, "reason": "Driver for our new van","how":"Our NGO is in desperate need of a new driver holding a bus driving license", "startDate":"2019-02-25", "endDate":"2020-04-23"},
+    {"nId":3, "ngoId":1, "target":200, "current":200, "reason": "We are currently changing premesis and need help moving","how":"We have outgrown our old premesis and need help moving several furnitures, beds and other household items ", "startDate":"2019-02-26", "endDate":"2019-04-26"},
+    {"nId":4, "ngoId":5, "target":30, "current":2, "reason": "Get more carers","how":"The demand for carers has increased and we can't pay for them. We require professionals who are willing to donate their time", "startDate":"2019-02-27", "endDate":"2019-04-28"},
+    {"nId":5, "ngoId":2, "target":70, "current":20, "reason": "Fix structural damage to building","how":"We need skilled people to carry out refurbishments throughout our premesis", "startDate":"2019-03-10", "endDate":"2019-09-23"}
   ],
   "Requests":[
-    {"nId":1, "reqId":4, "target":5, "current":2, "reason": "New Wheelchair","how":"How 1", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-27T18:25:43.511Z", "hide":false},
-    {"nId":2, "reqId":3, "target":600, "current":200, "reason": "Visit specialist in London","how":"How 2", "startDate":"2019-05-25T18:25:43.511Z", "endDate":"2020-04-23T18:25:43.511Z", "hide":false},
-    {"nId":3, "reqId":1, "target":20, "current":20, "reason": "Pay first 2 months rent","how":"How 3", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-26T18:25:43.511Z", "hide":true},
-    {"nId":4, "reqId":5, "target":30, "current":2, "reason": "Pay for medicine","how":"How 4", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-04-28T18:25:43.511Z", "hide":false},
-    {"nId":5, "reqId":2, "target":70, "current":20, "reason": "Pay outstanding debts","how":"How 5", "startDate":"2019-04-25T18:25:43.511Z", "endDate":"2019-06-23T18:25:43.511Z", "hide":true}
+    {"nId":1, "reqId":4, "target":5, "current":2, "reason": "New Wheelchair","how":"For the past two months I have been bedridden due to an unfortunate work place accident and need funds for an electronic Wheelchair", "startDate":"2019-02-25", "endDate":"2019-04-27", "hide":false},
+    {"nId":2, "reqId":3, "target":600, "current":200, "reason": "Visit specialist in London","how":"I have a rare disease which requires me to visit a specialist in Britain", "startDate":"2019-02-25", "endDate":"2020-04-23", "hide":false},
+    {"nId":3, "reqId":1, "target":20, "current":20, "reason": "Pay first 2 months rent","how":"I am homeless and require your help to secure an apartment where I can clean myself up and get a job", "startDate":"2019-02-25", "endDate":"2019-04-26", "hide":true},
+    {"nId":4, "reqId":5, "target":30, "current":2, "reason": "Pay for medicine","how":"I have a rare disease which the government can only help me so much and need your help securing my next term of pills", "startDate":"2019-02-25", "endDate":"2019-04-28", "hide":false},
+    {"nId":5, "reqId":2, "target":70, "current":20, "reason": "Pay outstanding debts","how":"I was a gambler and the past won't let me be and need your help to rid me of my past", "startDate":"2019-03-09", "endDate":"2019-06-23", "hide":true}
   ],
-  "data":[
-    {"title": "Event 1", "description": "Event 1 Description","extraInfo":"Additional Info"},
-    {"title": "Event 2", "description": "Event 2 Description","extraInfo":"Additional Info"},
-    {"title": "Event 3", "description": "Event 3 Description","extraInfo":"Additional Info"},
-    {"title": "Event 4", "description": "Event 4 Description","extraInfo":"Additional Info"},
-    {"title": "Event 5", "description": "Event 5 Description","extraInfo":"Additional Info"}
+  "data1":[
+    {"title": "Starting Point", "description": "Wheelchair model","extraInfo":"Total: Euros 1000"},
+    {"title": "Buy Wheelchair", "description": "Buying Wheelchair from Wheelchair Ltd.","extraInfo":"I would be very grateful when this is obtained as I would gain my independence again."}
+  ],
+  "data2":[
+    {"title": "Starting Point", "description": "We can't make it on our own and need financial aid","extraInfo":"Total: Euros 1650"},
+    {"title": "Medical Expenses", "description": "The expenses are way to expensive for us to cover alone. The MCCF has supplied us with enough funds to cover 75% of it all and need help to get the remaining 25%","extraInfo":"Euros 1000"},
+    {"title": "Buy air passage", "description": "We are using a low cost airline.","extraInfo":"Euros 150"},
+    {"title": "Pay for accomodation", "description": "Accomodation is covered by MFCC. However, we need to spend 2 days travelling to get to the apartments","extraInfo":"Euros 300"},
+    {"title": "Daily Expenses", "description": "Utilities and food","extraInfo":"Euros 200"}
+  ],
+  "data3":[
+    {"title": "Starting Point", "description": "I need help to pay rent while I get back on my feet","extraInfo":"Total: Euros 1000"},
+    {"title": "Pay Month 1", "description": "I should get a job by this time","extraInfo":"-"},
+    {"title": "Pay Month 2", "description": "I should be able to sustain myself after this stage","extraInfo":"Thank You!"}
+  ],
+  "data4":[
+    {"title": "Starting Point", "description": "Given my condition I cannot work to get money for my medications, and the government only covers so much","extraInfo":"Total: Euros 1000"},
+    {"title": "Get Medicine 1", "description": "Get Blood Medicine","extraInfo":"Euros 250"},
+    {"title": "Get Medicine 2", "description": "Get Lung Medicine","extraInfo":"Euros 750"}
+  ],
+  "data5":[
+    {"title": "Starting Point", "description": "Event 1 Description","extraInfo":"Euros 200"},
+    {"title": "Pay Debtors", "description": "Once debtors are paid I will be free from my past","extraInfo":"Thank you for giving me a second chance at life!"}
   ]
 }

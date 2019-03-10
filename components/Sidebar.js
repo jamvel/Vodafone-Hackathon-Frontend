@@ -16,11 +16,8 @@ export default class SideBar extends React.Component {
           </View>
 
           <List>
-            <ListItem button onPress={() => Actions.Login()}>
+            <ListItem button onPress={() => Actions.HomeScreen()}>
               <Text>Home</Text>
-            </ListItem>
-            <ListItem button onPress={() => Actions.Login()}>
-              <Text>Chat</Text>
             </ListItem>
             <ListItem button onPress={() => Actions.Profile()}>
               <Text>My Profile</Text>

@@ -4,11 +4,11 @@ import { Actions } from 'react-native-router-flux';
 import PhotoGridCompany from '../../PhotoGridCompany.js';
 
 const data = [
-  {"id":1, "name":"Vodafone", "address":"Malta International Airport (Arrivals), Ħal Luqa LQA 4000", "contact":99999247, "email":"info@vodafone.com", "employeeHours":200, "startDate":"2018-04-25T18:25:43.511Z", "img":"Vodafone.png"},
-  {"id":2, "name":"Office of the Prime Minister", "address":"Auberge de Castille", "contact":99999247, "email":"info@opm.com", "employeeHours":50, "startDate":"2018-06-24T18:15:43.511Z", "img":"OPM.png"},
-  {"id":3, "name":"The Malta Police Force", "address":"The Malta Police Force, Police General Headquarters, Pjazza San Kalcidonju, Floriana FRN 1530", "contact":21224001, "email":"pulizija@gov.mt", "employeeHours":37, "startDate":"2018-02-24T18:25:43.511Z", "img":"Police.png"},
-  {"id":4, "name":"Civil Protection Department Malta", "address":"Ministry for Home Affairs and National Security, 201, Strait Street, Valletta VLT 1433", "contact":25689000, "email":"homeaffairs@gov.mt", "employeeHours":157, "startDate":"2018-01-10T20:20:40.511Z", "img":"CPD.png"},
-  {"id":5, "name":"University Of Malta", "address":"University of Malta, Msida MSD 2080, Malta", "contact":23402340, "email":"info@um.edu.mt", "employeeHours":30, "startDate":"2018-03-12T08:25:53.511Z", "img":"UOM.png"}
+  {"id":1, "name":"Vodafone", "address":"Malta International Airport (Arrivals), Ħal Luqa LQA 4000", "sponsorScheme":"With every Red Plan we will add Euro 3 to your balance", "contact":99999247, "email":"info@vodafone.com", "employeeHours":200, "startDate":"2018-04-25", "img":"Vodafone.png"},
+  {"id":2, "name":"Office of the Prime Minister", "address":"Auberge de Castille", "sponsorScheme":"Euro 1 tax rebate to your balance", "contact":99999247, "email":"info@opm.com", "employeeHours":50, "startDate":"2018-06-24", "img":"OPM.png"},
+  {"id":3, "name":"The Malta Police Force", "address":"The Malta Police Force, Police General Headquarters, Pjazza San Kalcidonju, Floriana FRN 1530", "sponsorScheme":"N/A", "contact":21224001, "email":"pulizija@gov.mt", "employeeHours":37, "startDate":"2018-02-24", "img":"Police.png"},
+  {"id":4, "name":"Civil Protection Department Malta", "address":"Ministry for Home Affairs and National Security, 201, Strait Street, Valletta VLT 1433", "sponsorScheme":"N/A", "contact":25689000, "email":"homeaffairs@gov.mt", "employeeHours":157, "startDate":"2018-01-10", "img":"CPD.png"},
+  {"id":5, "name":"University Of Malta", "address":"University of Malta, Msida MSD 2080, Malta", "sponsorScheme":"Euro 2 in your balance for teaching during Extra Curricular activities", "contact":23402340, "email":"info@um.edu.mt", "employeeHours":30, "startDate":"2018-03-12", "img":"UOM.png"}
 ];
 
 var errorFound = false;
@@ -46,6 +46,7 @@ export default class CompanyProfile extends Component {
     const mob = "Mobile: " + data[this.props.id].contact;
     const email = "Email: " + data[this.props.id].email;
     const startDate = "Start Date: " + data[this.props.id].startDate;
+    const sponsorScheme = "Sponsor Scheme: " + data[this.props.id].sponsorScheme;
 
 
     errorFound = (this.props.id > data.length)? true: false;
@@ -65,6 +66,7 @@ export default class CompanyProfile extends Component {
                         <Text style={styles.description}>{address}</Text>
                         <Text style={styles.description}>{mob}</Text>
                         <Text style={styles.description}>{email}</Text>
+                        <Text style={styles.description}>{sponsorScheme}</Text>
                         <Text style={styles.description}>{startDate}</Text>
                       </View>
                   </View>
