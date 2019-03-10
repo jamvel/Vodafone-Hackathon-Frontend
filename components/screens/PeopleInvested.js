@@ -30,7 +30,7 @@ export default class PeopleInvested extends React.Component {
     };
 
     goRequestDet = (ngoID) => {
-      Actions.NGOProfile({id:ngoID});
+      Actions.Project({id:ngoID});
     }
 
   render() {
@@ -39,7 +39,7 @@ export default class PeopleInvested extends React.Component {
       Cards.push(
         <Card
           key={i}
-          id={i}
+          id={7}
           title={needs[i].reason}
           text={needs[i].how}
           date={needs[i].startDate}
@@ -49,7 +49,7 @@ export default class PeopleInvested extends React.Component {
       Cards.push(
         <Card
           key={i+1}
-          id={i+1}
+          id={5}
           title={requests[i].reason}
           text={requests[i].how}
           date={requests[i].startDate}
